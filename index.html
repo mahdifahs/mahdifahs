@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAHS Mahdi</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div class="jumping-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="#home" class="logo">FAHS <span>Mahdi</span></a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#home" class="nav-link active">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a href="#services" class="nav-link">Mes compétences</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#parcours" class="nav-link">Mon parcours</a>
+              </li>
+              <li class="nav-item">
+                <a href="#mes-projets" class="nav-link">Mes Projets</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">CV</a>
+              </li>
+            </ul>
+            <button id="nav-btn" class="nav-btn">
+              <img
+                id="nav-btn-img"
+                src="img/icons/open.svg"
+                alt="Navigation button"
+              />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="container container-lg">
+        <div
+          class="hero-row"
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="1800"
+          data-aos-duration="2000"
+        >
+          <div class="hero-content">
+            <span class="hero-greeting"> Bonjour, je suis</span>
+            <h1 class="hero-heading">FAHS Mahdi</h1>
+            <span class="hero-heading-subtitle">Étudiant BUT Réseau et Télécommunications, parcours Cybersécurité et Alternant chez SSTi03</span>
+            <div class="about-social-list">
+              <div class="social-links-row">
+                <a href="https://github.com/msfcode">
+                  <img
+                    src="img/social_icons/github.svg"
+                    alt="Link to GitHub account"
+                  />
+                </a>
+
+                <a href="https://www.linkedin.com/in/mahdi-fahs/">
+                  <img
+                    src="img/social_icons/linkedin.svg"
+                    alt="Link to linkedin profile"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <a href="#projects" class="btn">Mon Portfolio</a>
+              <a href="#contact" class="btn btn-white">Contactez-moi</a>
+            </div>
+          </div>
+          <div class="hero-img">
+            <img
+              src="img/hero/hero.png"
+              alt="Picture of Christian Buehner taken from Unsplash"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-title">
+          <h2 class="title">À propos de moi</h2>
+        </div>
+        <div class="about-row">
+          <div class="about-content">
+            <p class="about-descr">
+              Je suis FAHS Mahdi, étudiant en BUT Réseaux et Télécommunications à l'IUT UCA, spécialisé en Cybersécurité. Passionné par la sécurité informatique, j'ai développé des compétences en Pentesting Web, API, et Active Directory, ainsi qu'en administration et sécurisation des systèmes Windows et Linux. 
+              <br />
+              <br />
+              Je me suis formé au Pentesting chez TCM Security, une formation de qualité axée sur l'analyse des vulnérabilités des applications web, des API et des réseaux. Je m'intéresse aussi à la mise en place et à la gestion de systèmes sécurisés, notamment à travers la configuration de serveurs DNS, DHCP, DNSSEC, ainsi que le chiffrement sur Linux et la gestion des règles de pare-feu. 
+              <br />
+              <br />
+              Curieux, autonome et doté d'un bon esprit d'équipe, je cherche constamment à améliorer mes compétences et à explorer de nouvelles technologies. Je cherche également une alterance dans le domaine de l'administration systeme et sécurité ou dans le domaine du pentesting (Web, API, Active Directory)'".
+            </p>
+            <div class="about-download-btn">
+              <a href="output.pdf" class="btn btn-white">Télécharger le CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="services-title">
+      <h1 class="title">Mes Compétences</h>
+    </div>
+
+    <div class="services-row">
+      <!-- Service 1 - Pentesting -->
+      <div class="service-card" data-aos="fade-down">
+        <img class="service-card-img" src="img/services/01.svg" alt="Pentesting" />
+        <h3 class="service-card-title">Pentesting</h3>
+        <p>
+          Je réalise des tests de pénétration sur des applications Web et API afin d'identifier et corriger les vulnérabilités. Cette expertise inclut l'analyse des protocoles, de la sécurité des API et des attaques par injection.
+          <br /><br />
+          Formé chez TCM Security, je suis capable de réaliser des tests d'intrusion en utilisant des outils avancés pour évaluer la robustesse des systèmes et recommander des solutions de sécurisation.
+        </p>
+      </div>
+
+      <!-- Service 2 - Sécurisation des réseaux -->
+      <div class="service-card" data-aos="fade-down">
+        <img class="service-card-img" src="img/services/02.svg" alt="Sécurisation des réseaux" />
+        <h3 class="service-card-title">Sécurisation des réseaux</h3>
+        <p>
+          Mise en place de solutions pour sécuriser les infrastructures réseau, incluant des stratégies de gestion des pare-feu, des outils de détection d'intrusion (IDS), et des configurations avancées comme le DNSSEC pour garantir la sécurité des échanges.
+          <br /><br />
+          Vous bénéficierez d'une analyse approfondie des vulnérabilités réseau et de la mise en œuvre de mesures de sécurité pour protéger votre réseau contre les attaques externes.
+        </p>
+      </div>
+
+      <!-- Service 3 - Gestion des systèmes -->
+      <div class="service-card" data-aos="fade-down">
+        <img class="service-card-img" src="img/services/03.svg" alt="Gestion des systèmes" />
+        <h3 class="service-card-title">Gestion des systèmes</h3>
+        <p>
+          Je configure et administre des serveurs DNS, DHCP et des systèmes Windows/Linux. Je mets en place des contrôleurs de domaine et des stratégies de sécurité réseau, y compris le chiffrement des données et la gestion des certificats.
+          <br /><br />
+          Mon expertise inclut également la configuration de serveurs DNSSEC et l'optimisation des règles de pare-feu afin de renforcer la sécurité des serveurs et des systèmes d'information.
+        </p>
+      </div>
+
+
+
+    </div>
+  </div>
+<!-- Section des compétences -->
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="skills-title">
+      <p></p>
+    </div>
+
+    <div class="skills-row">
+      <div class="skill">
+        <div class="skill-title">Web, API et Active Directory Pentesting</div>
+        <div class="skill-percent">85%</div>
+        <div class="skillbar" style="width: 0;"></div>
+      </div>
+      <div class="skill">
+        <div class="skill-title">Administration Systèmes Windows & Linux</div>
+        <div class="skill-percent">80%</div>
+        <div class="skillbar" style="width: 0;"></div>
+      </div>
+      <div class="skill">
+        <div class="skill-title">Sécurisation des systèmes</div>
+        <div class="skill-percent">90%</div>
+        <div class="skillbar" style="width: 0;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+<section id="qualite" class="qualite">
+  <div class="container">
+    <div class="qualite-title">
+      <h1>Qualité</h1>
+    </div>
+    <div class="qualite-content">
+      <div class="qualite-card">
+        <img src="img/icons/qualite1.svg" alt="Qualité 1" />
+        <h2 class="qualite-card-title">Confiance</h2>
+        <p>Je suis quelqu'un de fiable et transparent dans mes interactions professionnelles et personnelles.</p>
+      </div>
+      <div class="qualite-card">
+        <img src="img/icons/qualite2.svg" alt="Qualité 2" />
+        <h2 class="qualite-card-title">Créativité</h2>
+        <p>Je trouve des solutions innovantes pour résoudre des problèmes complexes.</p>
+      </div>
+      <div class="qualite-card">
+        <img src="img/icons/qualite3.svg" alt="Qualité 3" />
+        <h2 class="qualite-card-title">Engagement</h2>
+        <p>Je m'engage pleinement dans tous les projets que j'entreprends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+    /* Styles généraux de la section Mon Parcours */
+    .parcours {
+        background-color: #fff; /* Fond blanc pour toute la section */
+        padding: 60px 0;
+    }
+
+    .parcours-title {
+        text-align: center;
+        margin-bottom: 44px;
+    }
+
+    .parcours-title .title {
+        font-size: 4rem; /* Taille du titre très grande */
+        font-weight: bold;
+        color: #333;
+    }
+
+    .parcours-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .parcours-item {
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .parcours-item:nth-child(odd) {
+        margin-left: 50px;
+    }
+
+    .parcours-item:nth-child(even) {
+        margin-right: 50px;
+    }
+
+    .parcours-item h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #007BFF;
+    }
+
+    .parcours-item h4 {
+        font-size: 1.2rem;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    .parcours-item p {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    /* Point circulaire de la timeline */
+    .parcours-item::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #007BFF;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+
+    /* Animation de la timeline */
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .parcours-item {
+        animation: slideIn 1s ease-in-out;
+    }
+
+    /* Media query pour les petits écrans */
+    @media (max-width: 768px) {
+        .parcours-row {
+            padding: 0 20px;
+        }
+
+        .parcours-item {
+            width: 100%;
+        }
+
+        .parcours-item:nth-child(odd),
+        .parcours-item:nth-child(even) {
+            margin: 0;
+        }
+    }
+</style>
+<style>
+    /* Section Mes Projets */
+    .projects-row {
+        display: flex; /* Utilise Flexbox */
+        flex-direction: column; /* Aligne les éléments verticalement */
+        align-items: center; /* Centre horizontalement les éléments */
+        justify-content: center; /* Centre verticalement les éléments */
+        text-align: center; /* Centre le texte à l'intérieur */
+        width: 100%; /* Occupe toute la largeur de la page */
+        padding: 2rem 0; /* Ajoute de l'espace en haut et en bas */
+        background-color: #f0f0f0; /* Fond gris pour la section */
+    }
+
+    /* Titre de la section */
+    .projects-row h1 {
+        font-size: 3.5rem; /* Taille du texte pour le titre */
+        font-weight: 900; /* Texte très gras et solide */
+        color: #333; /* Couleur sombre pour le titre */
+        margin-bottom: 2rem; /* Espace en dessous du titre */
+    }
+
+    /* Conteneur des projets individuels */
+    .project-box {
+        margin: 1rem 0; /* Ajoute un espace au-dessus et en dessous */
+        width: 80%; /* Définit une largeur relative pour les petits écrans */
+        max-width: 500px; /* Définit une largeur maximale pour un design responsive */
+        text-align: center; /* Centre le contenu */
+    }
+
+    /* Bouton des projets */
+    .project-box a {
+        display: block;
+        padding: 1rem 2rem; /* Augmente la taille du bouton */
+        font-size: 1.2rem; /* Agrandit le texte */
+        font-weight: bold; /* Rend le texte en gras */
+        background-color: #007BFF; /* Couleur de fond */
+        color: white; /* Couleur du texte */
+        text-decoration: none; /* Supprime la ligne soulignée */
+        border-radius: 8px; /* Coins arrondis */
+        transition: transform 0.2s, background-color 0.2s; /* Animation sur le hover */
+    }
+
+    /* Effets au survol */
+    .project-box a:hover {
+        background-color: #0056b3; /* Change la couleur de fond au survol */
+        transform: scale(1.05); /* Zoom léger au survol */
+    }
+</style>
+
+</head>
+
+<body>
+
+    <section id="parcours" class="parcours">
+        <div class="container">
+            <div class="parcours-title">
+                <h2 class="title">Mon Parcours</h2>
+            </div>
+            <div class="parcours-row">
+                <!-- Parcours 2025 - 2024 -->
+                <div class="parcours-item">
+                    <h3>2025 - 2024</h3>
+                    <h4>Troisième année en BUT Réseau et Télécommunications - Spécialisation Cybersécurité</h4>
+                    <p>
+                        Actuellement en troisième année de BUT Réseau et Télécommunications à l'IUT de Clermont-Ferrand, je me spécialise dans la cybersécurité, avec un focus sur la sécurisation des infrastructures réseaux, les tests de pénétration et la gestion des systèmes sécurisés.
+                    </p>
+                </div>
+
+                <!-- Parcours 2023 - 2024 -->
+                <div class="parcours-item">
+                    <h3>2023 - 2024</h3>
+                    <h4>Deuxième année BUT Réseau et Télécommunications - Spécialisation Cybersécurité</h4>
+                    <p>
+                        En deuxième année de BUT Réseau et Télécommunications, j'ai approfondi mes connaissances en cybersécurité et en gestion des réseaux. J'ai également commencé ma formation chez TCM Security en Web Penetration Testing et API.
+                    </p>
+                </div>
+
+                <!-- Parcours 2022 - 2023 -->
+                <div class="parcours-item">
+                    <h3>2022 - 2023</h3>
+                    <h4>Première année de BUT Réseau et Télécommunications à l'IUT UCA</h4>
+                    <p>
+                        J'ai commencé mes études en Réseau et Télécommunications à l'IUT de Clermont-Ferrand, me familiarisant avec les bases de la gestion des réseaux, des systèmes et de la cybersécurité.
+                    </p>
+                </div>
+
+                <!-- Parcours 2021 - 2022 (Baccalauréat) -->
+                <div class="parcours-item">
+                    <h3>2021 - 2022</h3>
+                    <h4>Baccalauréat Scientifique et Certification en Ethical Hacking</h4>
+                    <p>
+                        En 2022, j'ai obtenu mon Baccalauréat Scientifique avec des spécialités en Mathématiques et Biologie. En parallèle, j'ai obtenu une certification en "Practical Ethical Hacking" chez TCM Security, me permettant de découvrir les bases du hacking éthique et de la cybersécurité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<style>
+  /* Style général des services */
+  .services {
+    background-color: #f7f7f7;
+    padding: 30px 0;
+  }
+
+  .services-title .title {
+    text-align: center;
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .services-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .service-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+  }
+
+  .service-card-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  /* Section des compétences */
+  .skills {
+    background-color: #f7f7f7;
+    padding: 30px 0;
+  }
+
+  .skills-title .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .skills-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .skill {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    min-width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .skill:hover {
+    transform: translateY(-10px);
+  }
+
+  .skill-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  .skill-percent {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+
+  .skillbar {
+    height: 6px;
+    background-color: #4caf50;
+    border-radius: 3px;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+
+  /* Animation des barres de compétence */
+  @keyframes skillBarAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: var(--skill-width);
+    }
+  }
+
+  .skillbar {
+    animation: skillBarAnimation 1s ease-in-out forwards;
+  }
+
+  .skill:nth-child(1) .skillbar {
+    --skill-width: 85%;
+  }
+  .skill:nth-child(2) .skillbar {
+    --skill-width: 80%;
+  }
+  .skill:nth-child(3) .skillbar {
+    --skill-width: 90%;
+  }
+
+  /* Responsivité pour les petites tailles d'écran */
+  @media (max-width: 768px) {
+    .service-card, .skill {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+<script>
+  // Animation des barres de compétence lorsque la section devient visible
+  document.addEventListener("DOMContentLoaded", () => {
+    const skillbars = document.querySelectorAll('.skillbar');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.style.getPropertyValue('--skill-width');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillbars.forEach(skillbar => observer.observe(skillbar));
+  });
+</script>
+
+
+<section id="mes-projets">
+<div class="projects-row">
+<H1> Mes projets </H1>
+          <div class="project-box">
+            <a href="https://github.com/msfcode" target="_blank">
+              <img class="project-img" src="img/works/phishing.png" alt="Phishing Attack Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Phishing Attack</h5>
+                  <p class="white">
+                    Mon projet, nommé MPHISH, est un simulateur de phishing conçu pour aider à sensibiliser les utilisateurs aux risques liés aux attaques par hameçonnage. Il permet de reproduire des scénarios réalistes de phishing afin de mieux comprendre et détecter ces menaces avant qu'elles n'affectent les systèmes réels.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Ajoute d'autres projets ici -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-title">
+          <h2 class="title">Contact</h2>
+        </div>
+        <div class="contact-content">
+          <p>
+            Parlez-moi de votre projet.
+            <br />
+            Travaillons ensemble !
+          </p>
+        </div>
+
+        <form data-aos="zoom-in">
+          <div class="input-box">
+            <input type="text" name="name" placeholder="Nom Complet" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse Email"
+              required
+            />
+          </div>
+
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Votre message"
+            required
+          ></textarea>
+        </form>
+
+        <div class="contact-button" data-aos="fade-up">
+          <a href="#!" class="btn btn-red">Envoyer le message</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="social-links-row footer-social">
+            <a href="#!">
+              <img
+                src="img/social_icons/github.svg"
+                alt="Link to GitHub account"
+              />
+            </a>
+
+            <a href="#!">
+              <img
+                src="img/social_icons/linkedin.svg"
+                alt="Link to linkedin profile"
+              />
+            </a>
+
+          </div>
+
+          <div class="footer-copyright">
+            <p>&copy; Copyright FAHS Mahdi 2025 | Designed by FAHS Mahdi</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="goToTop" class="goToTop">
+      <a href="#home">
+        <img src="img/icons/arrow_up.svg" alt="Back to top" />
+      </a>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
