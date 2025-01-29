@@ -1,708 +1,959 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAHS Mahdi</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/media.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - FAHS Mahdi</title>
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Librairies -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <body>
-    <div id="preloader">
-      <div class="jumping-dots">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+<!-- Animate.css pour l'animation -->
+<link href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" rel="stylesheet">
 
-    <header id="header" class="header">
-      <div class="container container-lg">
-        <div class="header-nav">
-          <a href="#home" class="logo">FAHS <span>Mahdi</span></a>
-          <nav id="nav" class="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="#home" class="nav-link active">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a href="#about" class="nav-link">À propos</a>
-              </li>
-              <li class="nav-item">
-                <a href="#services" class="nav-link">Mes compétences</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#parcours" class="nav-link">Mon parcours</a>
-              </li>
-              <li class="nav-item">
-                <a href="#mes-projets" class="nav-link">Mes Projets</a>
-              </li>
-              <li class="nav-item">
-                <a href="#contact" class="nav-link">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a href="#about" class="nav-link">CV</a>
-              </li>
-            </ul>
-            <button id="nav-btn" class="nav-btn">
-              <img
-                id="nav-btn-img"
-                src="img/icons/open.svg"
-                alt="Navigation button"
-              />
-            </button>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <section id="home" class="hero">
-      <div class="container container-lg">
-        <div
-          class="hero-row"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-out"
-          data-aos-delay="1800"
-          data-aos-duration="2000"
-        >
-          <div class="hero-content">
-            <span class="hero-greeting"> Bonjour, je suis</span>
-            <h1 class="hero-heading">FAHS Mahdi</h1>
-            <span class="hero-heading-subtitle">Étudiant BUT Réseau et Télécommunications, parcours Cybersécurité et Alternant chez SSTi03</span>
-            <div class="about-social-list">
-              <div class="social-links-row">
-                <a href="https://github.com/msfcode">
-                  <img
-                    src="img/social_icons/github.svg"
-                    alt="Link to GitHub account"
-                  />
-                </a>
-
-                <a href="https://www.linkedin.com/in/mahdi-fahs/">
-                  <img
-                    src="img/social_icons/linkedin.svg"
-                    alt="Link to linkedin profile"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <a href="#projects" class="btn">Mon Portfolio</a>
-              <a href="#contact" class="btn btn-white">Contactez-moi</a>
-            </div>
-          </div>
-          <div class="hero-img">
-            <img
-              src="img/hero/hero.png"
-              alt="Picture of Christian Buehner taken from Unsplash"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-title">
-          <h2 class="title">À propos de moi</h2>
-        </div>
-        <div class="about-row">
-          <div class="about-content">
-            <p class="about-descr">
-              Je suis FAHS Mahdi, étudiant en BUT Réseaux et Télécommunications à l'IUT UCA, spécialisé en Cybersécurité. Passionné par la sécurité informatique, j'ai développé des compétences en Pentesting Web, API, et Active Directory, ainsi qu'en administration et sécurisation des systèmes Windows et Linux. 
-              <br />
-              <br />
-              Je me suis formé au Pentesting chez TCM Security, une formation de qualité axée sur l'analyse des vulnérabilités des applications web, des API et des réseaux. Je m'intéresse aussi à la mise en place et à la gestion de systèmes sécurisés, notamment à travers la configuration de serveurs DNS, DHCP, DNSSEC, ainsi que le chiffrement sur Linux et la gestion des règles de pare-feu. 
-              <br />
-              <br />
-              Curieux, autonome et doté d'un bon esprit d'équipe, je cherche constamment à améliorer mes compétences et à explorer de nouvelles technologies. Je cherche également une alterance dans le domaine de l'administration systeme et sécurité ou dans le domaine du pentesting (Web, API, Active Directory)'".
-            </p>
-            <div class="about-download-btn">
-              <a href="output.pdf" class="btn btn-white">Télécharger le CV</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section id="services" class="services">
-  <div class="container">
-    <div class="services-title">
-      <h1 class="title">Mes Compétences</h>
-    </div>
-
-    <div class="services-row">
-      <!-- Service 1 - Pentesting -->
-      <div class="service-card" data-aos="fade-down">
-        <img class="service-card-img" src="img/services/01.svg" alt="Pentesting" />
-        <h3 class="service-card-title">Pentesting</h3>
-        <p>
-          Je réalise des tests de pénétration sur des applications Web et API afin d'identifier et corriger les vulnérabilités. Cette expertise inclut l'analyse des protocoles, de la sécurité des API et des attaques par injection.
-          <br /><br />
-          Formé chez TCM Security, je suis capable de réaliser des tests d'intrusion en utilisant des outils avancés pour évaluer la robustesse des systèmes et recommander des solutions de sécurisation.
-        </p>
-      </div>
-
-      <!-- Service 2 - Sécurisation des réseaux -->
-      <div class="service-card" data-aos="fade-down">
-        <img class="service-card-img" src="img/services/02.svg" alt="Sécurisation des réseaux" />
-        <h3 class="service-card-title">Sécurisation des réseaux</h3>
-        <p>
-          Mise en place de solutions pour sécuriser les infrastructures réseau, incluant des stratégies de gestion des pare-feu, des outils de détection d'intrusion (IDS), et des configurations avancées comme le DNSSEC pour garantir la sécurité des échanges.
-          <br /><br />
-          Vous bénéficierez d'une analyse approfondie des vulnérabilités réseau et de la mise en œuvre de mesures de sécurité pour protéger votre réseau contre les attaques externes.
-        </p>
-      </div>
-
-      <!-- Service 3 - Gestion des systèmes -->
-      <div class="service-card" data-aos="fade-down">
-        <img class="service-card-img" src="img/services/03.svg" alt="Gestion des systèmes" />
-        <h3 class="service-card-title">Gestion des systèmes</h3>
-        <p>
-        Je configure et administre des serveurs DNS et DHCP sous Linux et Windows, ainsi que des solutions de VPN (OpenVPN, WireGuard) pour un accès sécurisé. J'optimise les règles de pare-feu (iptables, ufw) pour sécuriser les réseaux, et utilise Wazuh pour la surveillance de la sécurité et la détection des menaces.
-          <br /><br />
-         J'automatise les tâches avec des scripts Python et assure la sauvegarde et la synchronisation des données via rsync.
-        </p>
-      </div>
-
-
-
-    </div>
-  </div>
-<!-- Section des compétences -->
-<section id="skills" class="skills">
-  <div class="container">
-    <div class="skills-title">
-      <p></p>
-    </div>
-
-    <div class="skills-row">
-      <div class="skill">
-        <div class="skill-title">Web, API et Active Directory Pentesting</div>
-        <div class="skill-percent">85%</div>
-        <div class="skillbar" style="width: 0;"></div>
-      </div>
-      <div class="skill">
-        <div class="skill-title">Administration Systèmes Windows & Linux</div>
-        <div class="skill-percent">80%</div>
-        <div class="skillbar" style="width: 0;"></div>
-      </div>
-      <div class="skill">
-        <div class="skill-title">Sécurisation des systèmes</div>
-        <div class="skill-percent">90%</div>
-        <div class="skillbar" style="width: 0;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-</section>
-
-<section id="qualite" class="qualite">
-  <div class="container">
-    <div class="qualite-title">
-      <h1>Qualité</h1>
-    </div>
-    <div class="qualite-content">
-      <div class="qualite-card">
-        <img src="img/icons/qualite1.svg" alt="Qualité 1" />
-        <h2 class="qualite-card-title">Confiance</h2>
-        <p>Je suis quelqu'un de fiable et transparent dans mes interactions professionnelles et personnelles.</p>
-      </div>
-      <div class="qualite-card">
-        <img src="img/icons/qualite2.svg" alt="Qualité 2" />
-        <h2 class="qualite-card-title">Créativité</h2>
-        <p>Je trouve des solutions innovantes pour résoudre des problèmes complexes.</p>
-      </div>
-      <div class="qualite-card">
-        <img src="img/icons/qualite3.svg" alt="Qualité 3" />
-        <h2 class="qualite-card-title">Engagement</h2>
-        <p>Je m'engage pleinement dans tous les projets que j'entreprends.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<style>
-    /* Styles généraux de la section Mon Parcours */
-    .parcours {
-        background-color: #fff; /* Fond blanc pour toute la section */
-        padding: 60px 0;
+  <style>
+    /* Général */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      text-align: center;
     }
 
-    .parcours-title {
-        text-align: center;
-        margin-bottom: 44px;
+    /* Menu */
+    nav {
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding: 10px 0;
+      backdrop-filter: blur(10px); /* Effet de floutage sur le menu */
+      transition: top 0.3s ease;
     }
 
-    .parcours-title .title {
-        font-size: 4rem; /* Taille du titre très grande */
-        font-weight: bold;
-        color: #333;
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
-    .parcours-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    .navbar-nav .nav-item {
+      margin: 0 8px;
     }
 
-    .parcours-item {
-        position: relative;
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        width: 90%;
-        max-width: 800px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        overflow: hidden;
+    .navbar-nav .nav-link {
+      color: #333;
+      font-size: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-decoration: none;
     }
 
-    .parcours-item:nth-child(odd) {
-        margin-left: 50px;
+    .navbar-nav .nav-item:hover .nav-link {
+      transform: scale(1.05);
+      color: #FFB800;
     }
 
-    .parcours-item:nth-child(even) {
-        margin-right: 50px;
+    /* Bloc d'accueil */
+    .accueil {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 85vh;
+      padding-top: 120px; /* Décalage pour ne pas que le texte soit masqué par le menu */
+      gap: 20px;
     }
 
-    .parcours-item h3 {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #007BFF;
+    .texte-accueil {
+      text-align: left;
+      max-width: 450px;
     }
 
-    .parcours-item h4 {
-        font-size: 1.2rem;
-        color: #555;
-        margin-top: 10px;
+    .texte-accueil h1 {
+      font-size: 4.5em;
+      font-weight: bold;
+      color: #FFB800;
+      transition: transform 0.3s ease;
     }
 
-    .parcours-item p {
-        font-size: 1rem;
-        color: #555;
-        margin-top: 10px;
+    .texte-accueil h1:hover {
+      transform: scale(1.05);
     }
 
-    /* Point circulaire de la timeline */
-    .parcours-item::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 20px;
-        background-color: #007BFF;
-        border-radius: 50%;
-        border: 3px solid white;
+    .texte-accueil p {
+      font-size: 1.2em;
+      color: #666;
     }
 
-    /* Animation de la timeline */
-    @keyframes slideIn {
-        0% {
-            opacity: 0;
-            transform: translateX(100px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
+    .accueil img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      border: 5px solid #FFB800;
+      animation: bubbleAnimate 2s ease-in-out infinite;
     }
 
-    .parcours-item {
-        animation: slideIn 1s ease-in-out;
+    @keyframes bubbleAnimate {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
 
-    /* Media query pour les petits écrans */
-    @media (max-width: 768px) {
-        .parcours-row {
-            padding: 0 20px;
-        }
-
-        .parcours-item {
-            width: 100%;
-        }
-
-        .parcours-item:nth-child(odd),
-        .parcours-item:nth-child(even) {
-            margin: 0;
-        }
-    }
-</style>
-<style>
-    /* Section Mes Projets */
-    .projects-row {
-        display: flex; /* Utilise Flexbox */
-        flex-direction: column; /* Aligne les éléments verticalement */
-        align-items: center; /* Centre horizontalement les éléments */
-        justify-content: center; /* Centre verticalement les éléments */
-        text-align: center; /* Centre le texte à l'intérieur */
-        width: 100%; /* Occupe toute la largeur de la page */
-        padding: 2rem 0; /* Ajoute de l'espace en haut et en bas */
-        background-color: #f0f0f0; /* Fond gris pour la section */
+    /* Bloc À propos de moi */
+    .about {
+      padding: 40px 20px;
     }
 
-    /* Titre de la section */
-    .projects-row h1 {
-        font-size: 3.5rem; /* Taille du texte pour le titre */
-        font-weight: 900; /* Texte très gras et solide */
-        color: #333; /* Couleur sombre pour le titre */
-        margin-bottom: 2rem; /* Espace en dessous du titre */
+    .about h2 {
+      font-size: 2.5em;
+      color: #FFB800;
+      font-weight: bold;
+      transition: transform 0.3s ease;
     }
 
-    /* Conteneur des projets individuels */
-    .project-box {
-        margin: 1rem 0; /* Ajoute un espace au-dessus et en dessous */
-        width: 80%; /* Définit une largeur relative pour les petits écrans */
-        max-width: 500px; /* Définit une largeur maximale pour un design responsive */
-        text-align: center; /* Centre le contenu */
+    .about h2:hover {
+      transform: scale(1.05);
     }
 
-    /* Bouton des projets */
-    .project-box a {
-        display: block;
-        padding: 1rem 2rem; /* Augmente la taille du bouton */
-        font-size: 1.2rem; /* Agrandit le texte */
-        font-weight: bold; /* Rend le texte en gras */
-        background-color: #007BFF; /* Couleur de fond */
-        color: white; /* Couleur du texte */
-        text-decoration: none; /* Supprime la ligne soulignée */
-        border-radius: 8px; /* Coins arrondis */
-        transition: transform 0.2s, background-color 0.2s; /* Animation sur le hover */
+    .about p {
+      font-size: 1.1em;
+      color: #666;
+      max-width: 750px;
+      margin: 20px auto;
     }
 
-    /* Effets au survol */
-    .project-box a:hover {
-        background-color: #0056b3; /* Change la couleur de fond au survol */
-        transform: scale(1.05); /* Zoom léger au survol */
+    /* Pied de page */
+    footer {
+      padding: 10px 0;
+      text-align: center;
+      backdrop-filter: blur(10px); /* Effet flou pour le pied de page */
     }
-</style>
 
+    footer a {
+      margin: 0 15px;
+      display: inline-block;
+    }
+
+    footer img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Style pour les logos sous le texte d'accueil */
+    .logos a {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .logos img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .logos img:hover {
+      transform: scale(1.1);
+      border: none; /* Enlève les bordures des logos */
+    }
+
+    /* Effet flouté pour les éléments fixes */
+    .navbar, footer {
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+    }
+
+    .navbar {
+      top: 0;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    .content {
+      margin-top: 100px; /* Pour compenser la hauteur du menu */
+      margin-bottom: 60px; /* Pour compenser la hauteur du pied de page */
+    }
+
+    /* Mots en jaune */
+    .highlight {
+      color: #FFB800;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
 
-    <section id="parcours" class="parcours">
-        <div class="container">
-            <div class="parcours-title">
-                <h2 class="title">Mon Parcours</h2>
-            </div>
-            <div class="parcours-row">
-                <!-- Parcours 2025 - 2024 -->
-                <div class="parcours-item">
-                    <h3>2025 - 2024</h3>
-                    <h4>Troisième année en BUT Réseau et Télécommunications - Spécialisation Cybersécurité</h4>
-                    <p>
-                        Actuellement en troisième année de BUT Réseau et Télécommunications à l'IUT de Clermont-Ferrand, je me spécialise dans la cybersécurité, avec un focus sur la sécurisation des infrastructures réseaux, les tests de pénétration et la gestion des systèmes sécurisés.
-                    </p>
-                </div>
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">A propos de moi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#career">Mon parcours</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Expériences professionnelles</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Mes compétences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projets">Mes projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contacter moi</a></li>
+      </ul>
+    </div>
+  </nav>
 
-                <!-- Parcours 2023 - 2024 -->
-                <div class="parcours-item">
-                    <h3>2023 - 2024</h3>
-                    <h4>Deuxième année BUT Réseau et Télécommunications - Spécialisation Cybersécurité</h4>
-                    <p>
-                        En deuxième année de BUT Réseau et Télécommunications, j'ai approfondi mes connaissances en cybersécurité et en gestion des réseaux. J'ai également commencé ma formation chez TCM Security en Web Penetration Testing et API.
-                    </p>
-                </div>
+  <!-- Bloc d'accueil -->
+  <section class="accueil" data-aos="fade-up">
+    <div class="texte-accueil">
+      <h1>Bonjour, je suis <span>FAHS Mahdi</span></h1>
+      <p>Étudiant BUT Réseaux et Télécommunications, parcours Cybersécurité et Alternant chez SSTi03</p>
 
-                <!-- Parcours 2022 - 2023 -->
-                <div class="parcours-item">
-                    <h3>2022 - 2023</h3>
-                    <h4>Première année de BUT Réseau et Télécommunications à l'IUT UCA</h4>
-                    <p>
-                        J'ai commencé mes études en Réseau et Télécommunications à l'IUT de Clermont-Ferrand, me familiarisant avec les bases de la gestion des réseaux, des systèmes et de la cybersécurité.
-                    </p>
-                </div>
+      <!-- Logos LinkedIn et GitHub sous le texte -->
+      <div class="logos">
+        <a href="https://fr.linkedin.com/in/mahdi-fahs-21a98116a" target="_blank">
+          <img src="linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/mahdifahs/" target="_blank">
+          <img src="github.svg" alt="GitHub">
+        </a>
+      </div>
+    </div>
+    <img src="fahs-mahdi.jpg" alt="Photo de Fahs Mahdi" data-aos="zoom-in" data-aos-duration="1000">
+  </section>
 
-                <!-- Parcours 2021 - 2022 (Baccalauréat) -->
-                <div class="parcours-item">
-                    <h3>2021 - 2022</h3>
-                    <h4>Baccalauréat Scientifique et Certification en Ethical Hacking</h4>
-                    <p>
-                        En 2022, j'ai obtenu mon Baccalauréat Scientifique avec des spécialités en Mathématiques et Biologie. En parallèle, j'ai obtenu une certification en "Practical Ethical Hacking" chez TCM Security, me permettant de découvrir les bases du hacking éthique et de la cybersécurité.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Bloc A propos de moi -->
+  <section id="about" class="about" data-aos="fade-up" data-aos-duration="1000">
+    <h2>À propos de moi</h2>
+    <p>Je suis <span class="highlight">FAHS Mahdi</span>, étudiant en <span class="highlight">Réseaux et Télécommunications</span>, avec une spécialisation en <span class="highlight">Cybersécurité</span>. Passionné par la sécurité informatique, j'ai acquis des compétences en <span class="highlight">Pentesting</span>, administration des systèmes et sécurisation des infrastructures réseaux, aussi bien sur <span class="highlight">Windows</span> que sur <span class="highlight">Linux</span>.</p>
+    <p>Formé en <span class="highlight">Pentesting</span> chez <span class="highlight">TCM Security</span>, j'ai approfondi l'analyse des vulnérabilités dans les applications web, les API, et les réseaux. Mon intérêt s'étend également à la gestion des systèmes sécurisés, notamment à travers des technologies comme <span class="highlight">DNSSEC</span>, <span class="highlight">DHCP</span>, et la gestion des pare-feu.</p>
+    <p>Curieux et autonome, je cherche constamment à améliorer mes compétences et à explorer de nouvelles technologies. Je suis actuellement à la recherche d'une alternance en <span class="highlight">administration système</span> ou <span class="highlight">Pentesting</span>.</p>
+  </section>
 
+
+
+<!-- Mon Parcours -->
+<section id="career" class="parcours" data-aos="fade-up" data-aos-duration="1000">
+  <h2>Mon Parcours</h2>
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>2025 - 2024 : <span class="highlight">Troisième année en BUT Réseau et Télécommunications</span> - Spécialisation <span class="highlight">Cybersécurité</span></h3>
+        <p>Actuellement en troisième année de BUT Réseaux et Télécommunications à l'IUT de Clermont-Ferrand, je me spécialise dans la <span class="highlight">cybersécurité</span>, avec un focus sur la <span class="highlight">sécurisation des infrastructures réseaux</span>, les <span class="highlight">tests de pénétration</span> et la gestion des <span class="highlight">systèmes sécurisés</span>.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>2023 - 2024 : <span class="highlight">Deuxième année en BUT Réseaux et Télécommunications</span> - Spécialisation <span class="highlight">Cybersécurité</span></h3>
+        <p>En deuxième année de BUT Réseaux et Télécommunications, j'ai approfondi mes connaissances en <span class="highlight">cybersécurité</span> et en gestion des réseaux. J'ai également commencé ma formation chez <span class="highlight">TCM Security</span> en <span class="highlight">Web Penetration Testing</span> et <span class="highlight">API</span>.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>2022 - 2023 : <span class="highlight">Première année de BUT Réseaux et Télécommunications</span> à l'IUT UCA</h3>
+        <p>J'ai commencé mes études en <span class="highlight">Réseau et Télécommunications</span> à l'IUT de Clermont-Ferrand, me familiarisant avec les bases de la gestion des réseaux, des systèmes et de la <span class="highlight">cybersécurité</span>.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>2021 - 2022 : <span class="highlight">Baccalauréat Scientifique</span> et <span class="highlight">Certification en Ethical Hacking</span></h3>
+        <p>En 2022, j'ai obtenu mon Baccalauréat Scientifique avec des spécialités en Mathématiques et Biologie. En parallèle, j'ai obtenu une certification en <span class="highlight">"Practical Ethical Hacking"</span> chez <span class="highlight">TCM Security</span>, me permettant de découvrir les bases du hacking éthique et de la cybersécurité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Mon Parcours */
+.parcours {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.parcours h2 {
+  font-size: 2.8em;
+  color: #FFB800;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.timeline-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #FFB800;
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-icon:hover {
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: left;
+  opacity: 0;
+  animation: slideInLeft 1s ease forwards;
+}
+
+.timeline-content h3 {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.timeline-content a {
+  color: #FFB800;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.timeline-content a:hover {
+  color: #333;
+}
+
+.highlight {
+  color: #FFB800;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
+
+
+
+<!-- Section Expérience professionnelle -->
+<section id="experience" class="section-experience">
+  <h2 class="titre-experience">Expérience Professionnelle</h2>
+  <div class="timeline-container-experience">
+    <div class="timeline-item-experience">
+      <div class="timeline-dot-experience"></div>
+      <div class="timeline-content-experience">
+        <h3>Octobre 2023 - Présent : Administration Système et Sécurité</h3>
+        <p>
+          Depuis octobre 2023, j'occupe un poste en administration système et sécurité, où j'ai pu mettre en place des mesures de sécurité avancées pour protéger les infrastructures IT. 
+          J'ai renforcé la sécurité d'Active Directory en traitant des vulnérabilités critiques telles que LLMNR, Zerologon, NTLM, IPv6, et Kerberos, et en déployant des solutions de protection contre les attaques par ransomware. 
+          Une de mes missions clés a été d'implémenter des politiques de sécurité sur les systèmes et utilisateurs afin de prévenir les attaques ciblées et renforcer la défense contre les domaines malveillants. 
+          J'ai également assuré la gestion et la synchronisation des utilisateurs avec Azure AD, tout en maîtrisant divers outils d'audit comme Ping Castle, ORCA, Scuba Gear, et Windows Defender Scoreboard.
+          Enfin, j'ai déployé et configuré Wazuh pour assurer une détection proactive des menaces et une gestion efficace des alertes de sécurité.
+        </p>
+      </div>
+      <!-- Logo de l'entreprise -->
+      <div class="logo-entreprise">
+        <img id="logo-entreprise" src="ssti03.jpeg" alt="Logo SSTi03">
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <style>
-  /* Style général des services */
-  .services {
-    background-color: #f7f7f7;
-    padding: 30px 0;
-  }
+/* Section Expérience professionnelle */
 
-  .services-title .title {
-    text-align: center;
-    font-size: 44px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
+/* Logo de l'entreprise */
+#logo-entreprise {
+  width: 150px; /* Taille du logo */
+  height: 150px; /* Taille du logo */
+  border-radius: 50%; /* Rend l'image circulaire */
+  border: 5px solid #fcd702; /* Bordure jaune */
+  object-fit: cover; /* Pour que l'image s'ajuste bien dans le cercle */
+  margin-top: 20px;
+}
 
-  .services-row {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+.logo-entreprise {
+  text-align: center;
+  margin-top: 30px;
+}
 
-  .service-card {
+.logo-entreprise img {
+  width: 150px; /* Ajuste la taille selon tes préférences */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo-entreprise img:hover {
+  transform: scale(1.1); /* Effet de zoom lors du survol */
+}
+
+.section-experience {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+}
+
+.titre-experience {
+  font-size: 2.8em;
+  color: #FFB800;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInExperience 1s ease-out;
+}
+
+.timeline-container-experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timeline-item-experience {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  padding: 30px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: slideInExperience 0.8s ease-out;
+}
+
+.timeline-dot-experience {
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  width: 20px;
+  height: 20px;
+  background-color: #FFB800;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-content-experience {
+  padding-left: 40px;
+  text-align: left;
+}
+
+.timeline-item-experience h3 {
+  font-size: 1.6em;
+  color: #333;
+  font-weight: bold;
+}
+
+.timeline-item-experience ul {
+  margin-top: 15px;
+  padding-left: 20px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.timeline-item-experience ul li {
+  margin-bottom: 10px;
+}
+
+@keyframes fadeInExperience {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInExperience {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
+
+
+
+<!-- Section des compétences -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="competence-title animate__animated animate__fadeInUp">Mes Compétences</h2>
+
+    <div class="row">
+      <!-- Compétence 1 (Pentesting) -->
+      <div class="col-md-4 mb-4">
+        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
+          <div class="competence-icon">
+            <img src="https://limessecurity.com/wp-content/uploads/2021/08/Icon_Infastructure_rot-1.png" alt="Pentesting Logo" class="logo-inside-card">
+          </div>
+          <h3><span class="highlight-yellow">Pentesting</span></h3>
+          <p class="competence-text">
+            Réalisation de <span class="highlight-yellow">tests de pénétration</span> sur des applications Web et API pour identifier et corriger les vulnérabilités. Formé chez <span class="highlight-yellow">TCM Security</span>, j'évalue la robustesse des systèmes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Compétence 2 (Sécurisation des réseaux) -->
+      <div class="col-md-4 mb-4">
+        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
+          <div class="competence-icon">
+            <img src="https://w7.pngwing.com/pngs/899/691/png-transparent-computer-network-global-network-global-network-material-text-globe-logo.png" alt="Networking Logo" class="logo-inside-card">
+          </div>
+          <h3><span class="highlight-yellow">Sécurisation des réseaux</span></h3>
+          <p class="competence-text">
+            Mise en place de <span class="highlight-yellow">solutions pour sécuriser les infrastructures réseau</span>, incluant des stratégies de gestion des pare-feu et des outils de détection d'intrusion (IDS).
+          </p>
+        </div>
+      </div>
+
+      <!-- Compétence 3 (Gestion des systèmes) -->
+      <div class="col-md-4 mb-4">
+        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
+          <div class="competence-icon">
+            <img src="https://www.clipartmax.com/png/middle/115-1153350_maintenance-system-logo.png" alt="System Management Logo" class="logo-inside-card">
+          </div>
+          <h3><span class="highlight-yellow">Gestion des systèmes</span></h3>
+          <p class="competence-text">
+            Configuration et administration des <span class="highlight-yellow">serveurs DNS et DHCP</span> sous Linux et Windows. Mise en place de <span class="highlight-yellow">VPN sécurisés</span> et gestion des pare-feu avec <span class="highlight-yellow">Wazuh</span> pour la surveillance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Style CSS -->
+<style>
+  /* Style général de la section des compétences */
+  .competence-section {
+    padding: 60px 0;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 28%;
-    min-width: 250px;
+  }
+
+  .competence-title {
+    font-size: 40px;
+    color: #333;
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .competence-card {
+    border: 2px solid #f7b731;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+  .competence-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.5s ease forwards;
+  }
+
+  /* Animation pour le rebond */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+
+  .competence-icon {
+    margin-bottom: 20px;
+    animation: rotateIcon 2s infinite;
+  }
+
+  @keyframes rotateIcon {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .logo-inside-card {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #f7b731;
     transition: transform 0.3s ease;
   }
 
-  .service-card:hover {
-    transform: translateY(-10px);
+  .logo-inside-card:hover {
+    transform: scale(1.1);
   }
 
-  .service-card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #555;
-  }
-
-  .service-card-img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-  }
-
-  /* Section des compétences */
-  .skills {
-    background-color: #f7f7f7;
-    padding: 30px 0;
-  }
-
-  .skills-title .title {
-    text-align: center;
+  h3 {
+    color: #333;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
-  .skills-row {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .skill {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 28%;
-    min-width: 220px;
+    margin-top: 15px;
     text-align: center;
-    transition: transform 0.3s ease;
   }
 
-  .skill:hover {
-    transform: translateY(-10px);
+  .competence-text {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
   }
 
-  .skill-title {
-    font-size: 16px;
+  .highlight-yellow {
+    color: #f7b731;
     font-weight: bold;
-    margin-bottom: 8px;
-    color: #555;
-  }
-
-  .skill-percent {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-  }
-
-  .skillbar {
-    height: 6px;
-    background-color: #4caf50;
-    border-radius: 3px;
-    width: 0;
-    transition: width 1s ease-in-out;
-  }
-
-  /* Animation des barres de compétence */
-  @keyframes skillBarAnimation {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: var(--skill-width);
-    }
-  }
-
-  .skillbar {
-    animation: skillBarAnimation 1s ease-in-out forwards;
-  }
-
-  .skill:nth-child(1) .skillbar {
-    --skill-width: 85%;
-  }
-  .skill:nth-child(2) .skillbar {
-    --skill-width: 80%;
-  }
-  .skill:nth-child(3) .skillbar {
-    --skill-width: 90%;
-  }
-
-  /* Responsivité pour les petites tailles d'écran */
-  @media (max-width: 768px) {
-    .service-card, .skill {
-      width: 100%;
-      margin-bottom: 15px;
-    }
   }
 </style>
 
+<!-- Scripts JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animate.css/animate.min.js"></script>
+
+
+</style>
+
+
+<!-- Section Qualité -->
+<section class="qualite-section">
+  <div class="container">
+    <h2 class="qualite-title animate__animated animate__fadeInUp">Mes Qualités</h2>
+
+    <div class="row">
+      <!-- Qualité 1 (Confiance) -->
+      <div class="col-md-4 mb-4">
+        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
+          <h3><span class="highlight-yellow">Confiance</span></h3>
+          <p class="qualite-text">
+            Je suis quelqu'un de <span class="highlight-yellow">fiable</span> et <span class="highlight-yellow">transparent</span> dans mes interactions professionnelles et personnelles.
+          </p>
+        </div>
+      </div>
+
+      <!-- Qualité 2 (Créativité) -->
+      <div class="col-md-4 mb-4">
+        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
+          <h3><span class="highlight-yellow">Créativité</span></h3>
+          <p class="qualite-text">
+            Je trouve des <span class="highlight-yellow">solutions innovantes</span> pour résoudre des problèmes complexes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Qualité 3 (Engagement) -->
+      <div class="col-md-4 mb-4">
+        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
+          <h3><span class="highlight-yellow">Engagement</span></h3>
+          <p class="qualite-text">
+            Mon <span class="highlight-yellow">engagement</span> à exceller me pousse à toujours donner le meilleur de moi-même.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Style CSS -->
+<style>
+  /* Style général de la section des qualités */
+  .qualite-section {
+    padding: 60px 0;
+    background-color: #fff;
+  }
+
+  .qualite-title {
+    font-size: 40px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .qualite-card {
+    border: 2px solid #f7b731;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+  .qualite-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.5s ease forwards;
+  }
+
+  /* Animation pour le rebond */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+
+  h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .qualite-text {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .highlight-yellow {
+    color: #f7b731;
+    font-weight: bold;
+  }
+</style>
+
+<!-- Scripts JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animate.css/animate.min.js"></script>
+
+
+
+<!-- Section Mes Projets -->
+<section id="projets" class="section-projets text-center">
+  <h2 class="section-title text-uppercase">Mes Projets</h2>
+  <div class="projet-card p-4">
+    <h3><span class="highlight-yellow">mphish</span> - Emulateur de Liens Phishing</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="Phishing Logo" class="logo-phishing mb-3" />
+    <p class="projet-text">
+      Un émulateur de liens phishing créé pour aider les pentesteurs à simuler des attaques de phishing. Ce projet open-source est disponible sur GitHub, offrant une plateforme simple et efficace pour tester la sécurité des réseaux et applications web.
+    </p>
+    <a href="https://github.com/msfcode" target="_blank" class="btn btn-primary btn-lg">Voir le projet sur GitHub</a>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .section-projets {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .projet-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  
+  .projet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .highlight-yellow {
+    color: #f7b731;
+  }
+  
+  .logo-phishing {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #f7b731;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-phishing:hover {
+    transform: scale(1.1);
+  }
+
+  .projet-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #f7b731;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #ffb81c;
+  }
+</style>
+
+<!-- JavaScript pour l'animation au survol -->
 <script>
-  // Animation des barres de compétence lorsque la section devient visible
-  document.addEventListener("DOMContentLoaded", () => {
-    const skillbars = document.querySelectorAll('.skillbar');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.width = entry.target.style.getPropertyValue('--skill-width');
-        }
-      });
-    }, { threshold: 0.5 });
-
-    skillbars.forEach(skillbar => observer.observe(skillbar));
-  });
+  // Vous pouvez ajouter des animations JS supplémentaires si nécessaire
 </script>
 
 
-<section id="mes-projets">
-<div class="projects-row">
-<H1> Mes projets </H1>
-          <div class="project-box">
-            <a href="https://github.com/msfcode" target="_blank">
-              <img class="project-img" src="img/works/phishing.png" alt="Phishing Attack Project" />
-              <div class="project-mask">
-                <div class="project-caption">
-                  <h5 class="white">Phishing Attack</h5>
-                  <p class="white">
-                    Mon projet, nommé MPHISH, est un simulateur de phishing conçu pour aider à sensibiliser les utilisateurs aux risques liés aux attaques par hameçonnage. Il permet de reproduire des scénarios réalistes de phishing afin de mieux comprendre et détecter ces menaces avant qu'elles n'affectent les systèmes réels.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Ajoute d'autres projets ici -->
-        </div>
-      </div>
-    </section>
+<!-- Section Contact -->
+<section id="contact" class="section-contact text-center">
+  <h2 class="section-title text-uppercase">Contactez-moi</h2>
+  <p class="contact-text">
+    Pour toute question ou demande, n'hésitez pas à me contacter par email.
+  </p>
+  <a href="mailto:mahdi.fahs@etu.uca.fr" class="btn btn-contact">Envoyer un Email</a>
+</section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-title">
-          <h2 class="title">Contact</h2>
-        </div>
-        <div class="contact-content">
-          <p>
-            Parlez-moi de votre projet.
-            <br />
-            Travaillons ensemble !
-          </p>
-        </div>
+<!-- CSS -->
+<style>
+  .section-contact {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .btn-contact {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #f7b731;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-contact:hover {
+    background-color: #ffb81c;
+  }
+</style>
 
-        <form data-aos="zoom-in">
-          <div class="input-box">
-            <input type="text" name="name" placeholder="Nom Complet" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Adresse Email"
-              required
-            />
-          </div>
+  <!-- Pied de page -->
+  <footer>
+    <a href="https://fr.linkedin.com/in/mahdi-fahs-21a98116a" target="_blank">
+      <img src="linkedin.svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/mahdifahs/" target="_blank">
+      <img src="github.svg" alt="GitHub">
+    </a>
+  </footer>
 
-          <textarea
-            name="message"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Votre message"
-            required
-          ></textarea>
-        </form>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
-        <div class="contact-button" data-aos="fade-up">
-          <a href="#!" class="btn btn-red">Envoyer le message</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <div class="social-links-row footer-social">
-            <a href="#!">
-              <img
-                src="img/social_icons/github.svg"
-                alt="Link to GitHub account"
-              />
-            </a>
-
-            <a href="#!">
-              <img
-                src="img/social_icons/linkedin.svg"
-                alt="Link to linkedin profile"
-              />
-            </a>
-
-          </div>
-
-          <div class="footer-copyright">
-            <p>&copy; Copyright FAHS Mahdi 2025 | Designed by FAHS Mahdi</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <div id="goToTop" class="goToTop">
-      <a href="#home">
-        <img src="img/icons/arrow_up.svg" alt="Back to top" />
-      </a>
-    </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="js/main.js"></script>
-  </body>
+</body>
 </html>
-
