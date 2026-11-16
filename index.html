@@ -142,15 +142,15 @@
   .hero { background: var(--black); color: #f5f5f7; }
   .hero-stage {
     min-height: 100vh; min-height: 100svh;
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    padding: calc(var(--nav-h) + 9vh) 22px 0; overflow: hidden; text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: var(--nav-h) 22px 0; overflow: hidden; text-align: center;
   }
-  .motion .hero { height: 175vh; }
+  .motion .hero { height: 150vh; }
   .motion .hero-stage { position: sticky; top: 0; height: 100vh; height: 100svh; }
   .hero-text { will-change: transform, opacity; }
   .hero-kicker { font-size: clamp(15px, 1.6vw, 19px); font-weight: 600; color: var(--grey-dark); margin-bottom: 12px; letter-spacing: 0; }
   .hero h1 {
-    font-size: clamp(56px, 10vw, 96px); line-height: 1; font-weight: 700; letter-spacing: -0.045em;
+    font-size: clamp(64px, 12vw, 128px); line-height: 1; font-weight: 700; letter-spacing: -0.045em;
   }
   .hero h1 .l > span { display: inline-block; }
   .hero-sub {
@@ -167,14 +167,6 @@
   .btn:hover { background: #0077ed; text-decoration: none; }
   .link-arrow { font-size: 17px; font-weight: 500; }
   .link-arrow::after { content: " \203A"; font-size: 1.15em; }
-  .hero-media {
-    position: relative; margin-top: 6vh;
-    height: min(52vh, 560px); aspect-ratio: 4 / 5;
-    border-radius: 28px; overflow: hidden; transform-origin: 50% 0;
-    will-change: transform; background: #111;
-  }
-  .hero-media .avatar { width: 100%; height: 100%; display: block; }
-  .hero-shade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
 
   /* ---------- Chiffres clés ---------- */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 72px; }
@@ -355,8 +347,6 @@
     .job { grid-template-columns: 1fr; padding: 28px; gap: 20px; }
     .job-logo { width: 72px; height: 72px; border-radius: 18px; font-size: 20px; }
     .edu-row { grid-template-columns: 1fr; gap: 6px; padding: 26px 0; }
-    .hero-stage { padding-top: calc(var(--nav-h) + 6vh); }
-    .hero-media { height: min(44vh, 460px); margin-top: 4vh; border-radius: 22px; }
     .cta { margin-top: 22px; }
     .motion .story-head { top: calc(var(--nav-h) + 5vh); }
     .motion .story-stages { height: 58vh; margin-top: 10vh; }
@@ -410,48 +400,6 @@
           <a class="link-arrow" href="#projets">Voir mes projets</a>
         </div>
       </div>
-      <div class="hero-media">
-        <svg class="avatar" viewBox="0 0 400 500" role="img" aria-label="Avatar illustré de Mahdi FAHS">
-          <defs>
-            <radialGradient id="av-bg" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#3a3a3c"/><stop offset="1" stop-color="#161617"/></radialGradient>
-            <radialGradient id="av-skin" cx="42%" cy="35%" r="70%"><stop offset="0" stop-color="#e2ae8a"/><stop offset=".65" stop-color="#c98e68"/><stop offset="1" stop-color="#a86f4f"/></radialGradient>
-            <linearGradient id="av-hair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3029"/><stop offset="1" stop-color="#1c1714"/></linearGradient>
-            <linearGradient id="av-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3c"/><stop offset="1" stop-color="#1d1d1f"/></linearGradient>
-            <radialGradient id="av-eye" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#6b4a33"/><stop offset="1" stop-color="#2a1b11"/></radialGradient>
-          </defs>
-          <rect width="400" height="500" fill="url(#av-bg)"/>
-          <!-- buste -->
-          <path d="M70 500 C78 418 132 380 200 380 C268 380 322 418 330 500 Z" fill="url(#av-top)"/>
-          <path d="M168 372 L232 372 L226 410 C214 422 186 422 174 410 Z" fill="#b57b59"/>
-          <path d="M160 392 C176 414 224 414 240 392" fill="none" stroke="#2c2c2e" stroke-width="10" stroke-linecap="round"/>
-          <!-- oreilles -->
-          <ellipse cx="108" cy="250" rx="20" ry="30" fill="#c38862"/>
-          <ellipse cx="292" cy="250" rx="20" ry="30" fill="#c38862"/>
-          <!-- tête -->
-          <path d="M200 120 C276 120 300 180 300 245 C300 330 256 382 200 382 C144 382 100 330 100 245 C100 180 124 120 200 120 Z" fill="url(#av-skin)"/>
-          <!-- barbe courte -->
-          <path d="M112 272 C118 344 156 382 200 382 C244 382 282 344 288 272 C276 312 248 334 226 330 C214 322 186 322 174 330 C152 334 124 312 112 272 Z" fill="#3b3029" opacity=".55"/>
-          <!-- cheveux -->
-          <path d="M100 236 C94 160 136 104 204 104 C268 104 308 150 300 236 C292 206 284 186 266 174 C240 186 196 180 164 166 C138 176 112 196 100 236 Z" fill="url(#av-hair)"/>
-          <!-- sourcils -->
-          <path d="M142 216 C156 206 176 206 188 212" fill="none" stroke="#2a201a" stroke-width="9" stroke-linecap="round"/>
-          <path d="M212 212 C224 206 244 206 258 216" fill="none" stroke="#2a201a" stroke-width="9" stroke-linecap="round"/>
-          <!-- yeux -->
-          <ellipse cx="164" cy="246" rx="17" ry="20" fill="#fff"/>
-          <ellipse cx="236" cy="246" rx="17" ry="20" fill="#fff"/>
-          <circle cx="166" cy="249" r="11" fill="url(#av-eye)"/>
-          <circle cx="238" cy="249" r="11" fill="url(#av-eye)"/>
-          <circle cx="170" cy="244" r="4" fill="#fff"/>
-          <circle cx="242" cy="244" r="4" fill="#fff"/>
-          <!-- nez -->
-          <path d="M200 262 C192 282 190 292 200 296 C206 297 210 295 212 292" fill="none" stroke="#a46a4a" stroke-width="6" stroke-linecap="round"/>
-          <!-- sourire -->
-          <path d="M170 318 C186 338 214 338 230 318 C214 326 186 326 170 318 Z" fill="#fff" stroke="#7a3f2c" stroke-width="5" stroke-linejoin="round"/>
-          <!-- reflet -->
-          <ellipse cx="160" cy="168" rx="38" ry="14" fill="#fff" opacity=".06" transform="rotate(-18 160 168)"/>
-        </svg>
-        <div class="hero-shade" aria-hidden="true"></div>
-      </div>
     </div>
   </section>
 
@@ -467,7 +415,7 @@
           <p class="stat-desc">en administration système et cybersécurité</p>
         </div>
         <div class="stat" data-reveal>
-          <div class="stat-num"><span class="count" data-to="6">6</span></div>
+          <div class="stat-num"><span class="count" data-to="5">5</span></div>
           <p class="stat-label">projets</p>
           <p class="stat-desc">durcissement, infrastructure et sécurité</p>
         </div>
@@ -487,16 +435,28 @@
       <p class="statement" data-words>Passionné de cybersécurité, mon objectif est d'anticiper et de contrer les menaces pour garantir des systèmes fiables et sécurisés.</p>
       <div class="about-grid" data-stagger>
         <article class="about-card" data-reveal>
-          <h3>Cloud et identité</h3>
-          <p>Profil orienté <strong>cloud et sécurité</strong> : Microsoft Azure, Entra ID et environnements Active Directory hybrides.</p>
+          <h3>Microsoft Azure</h3>
+          <p>Les 4 piliers : <strong>Compute</strong>, <strong>Réseau</strong>, <strong>Stockage</strong> et <strong>Bases de données</strong>, plus Cost Management.</p>
         </article>
         <article class="about-card" data-reveal>
-          <h3>Ancré dans le terrain</h3>
-          <p><strong>2 ans d'alternance</strong> en administration système et cybersécurité, avec une solide expérience de la gestion et de la sécurisation des systèmes Windows et Linux.</p>
+          <h3>Microsoft Entra ID</h3>
+          <p>Identités hybrides et synchronisation, RBAC, accès conditionnel, MFA et IAM.</p>
         </article>
         <article class="about-card" data-reveal>
-          <h3>Penser comme un attaquant</h3>
-          <p>Formation <strong>Practical Ethical Hacking</strong> (TCM Security) au pentest Active Directory, pour mieux auditer et durcir.</p>
+          <h3>Active Directory</h3>
+          <p><strong>Administration et sécurité</strong> : comptes, groupes, GPO, délégations, tiering et LAPS.</p>
+        </article>
+        <article class="about-card" data-reveal>
+          <h3>Pentest Active Directory</h3>
+          <p>Formation Practical Ethical Hacking (TCM Security) : Kerberoasting, relais NTLM, Pass-the-Hash, DCSync.</p>
+        </article>
+        <article class="about-card" data-reveal>
+          <h3>Durcissement</h3>
+          <p>Sécurisation de <strong>Linux</strong>, d'<strong>Active Directory</strong> et d'<strong>Entra ID</strong>, avec PingCastle, ScubaGear et les recommandations ANSSI.</p>
+        </article>
+        <article class="about-card" data-reveal>
+          <h3>Outils et réseau</h3>
+          <p><strong>Linux</strong> et networking (TCP/IP, VLAN, VPN, DNS, DHCP). Notions de <strong>Terraform</strong>, <strong>Docker</strong> et <strong>Git</strong>.</p>
         </article>
       </div>
     </div>
@@ -657,28 +617,21 @@
           <h3>Pentest d'une application LLM</h3>
           <p class="card-text">Injection de prompt, contournement des protections et fuite de données.</p>
         </article>
-        <article class="card s5" data-reveal>
+        <article class="card s12" data-reveal>
           <p class="big-num">03</p>
           <p class="card-tag">Phishing · Python</p>
           <h3>mphish</h3>
           <p class="card-text">Émulateur de liens de phishing open source pour simuler des attaques, à usage pédagogique et autorisé, exposé via Ngrok ou Localrun.</p>
           <p class="card-foot"><a class="link-arrow" href="https://github.com/mahdifahs/mphish" target="_blank" rel="noopener">Voir sur GitHub<span class="sr-only"> (mphish, nouvel onglet)</span></a></p>
         </article>
-        <article class="card s7" data-reveal>
-          <p class="big-num">04</p>
-          <p class="card-tag">Pentest web</p>
-          <h3>Pentest d'une application web</h3>
-          <p class="card-text">Test d'intrusion sur une application hébergée en local, pour identifier les principales failles et évaluer la robustesse de l'authentification et de l'autorisation.</p>
-          <p class="card-text">Injections SQL et NoSQL pour exfiltrer des données ou contourner l'authentification, failles XSS côté client.</p>
-        </article>
         <article class="card s6" data-reveal>
-          <p class="big-num">05</p>
+          <p class="big-num">04</p>
           <p class="card-tag">Infrastructure</p>
           <h3>Home Network</h3>
           <p class="card-text">Serveur ESXi hébergeant DNS, DHCP et pfSense (routage, pare-feu, VLAN, VPN), Suricata pour la détection d'intrusion, Wazuh pour les alertes et Nextcloud pour le stockage et la synchronisation des fichiers.</p>
         </article>
         <article class="card s6" data-reveal>
-          <p class="big-num">06</p>
+          <p class="big-num">05</p>
           <p class="card-tag">Matériel</p>
           <h3>Arduino Rubber Ducky</h3>
           <p class="card-text">Carte Arduino configurée en Rubber Ducky : prise de contrôle à distance, reverse shell et contournement de protections, pour des démonstrations de hacking éthique.</p>
@@ -844,8 +797,6 @@
   var bar = document.querySelector('.progress');
   var hero = document.querySelector('.hero');
   var heroText = document.querySelector('.hero-text');
-  var heroMedia = document.querySelector('.hero-media');
-  var heroShade = document.querySelector('.hero-shade');
   var story = document.querySelector('.story');
   var stages = story ? story.querySelectorAll('.stage') : [];
   var dots = story ? story.querySelectorAll('.rail i') : [];
@@ -859,13 +810,11 @@
     var max = document.documentElement.scrollHeight - vh;
     bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
 
-    // Hero : la photo grossit et s'assombrit, le texte s'efface vers le haut
+    // Hero : le texte rétrécit légèrement et s'efface vers le haut
     var r = hero.getBoundingClientRect();
     var p = clamp(-r.top / Math.max(r.height - vh, 1));
-    heroMedia.style.transform = 'scale(' + (1 + 0.28 * p) + ')';
-    heroShade.style.opacity = (0.6 * p).toFixed(3);
-    heroText.style.opacity = clamp(1 - p * 1.7).toFixed(3);
-    heroText.style.transform = 'translateY(' + (-70 * p) + 'px)';
+    heroText.style.opacity = clamp(1 - p * 1.4).toFixed(3);
+    heroText.style.transform = 'translateY(' + (-60 * p) + 'px) scale(' + (1 - 0.12 * p) + ')';
 
     // Déclaration : les mots s'illuminent au fil du défilement
     if (words.length) {
@@ -904,7 +853,7 @@
     window.removeEventListener('scroll', onScroll);
     window.removeEventListener('resize', onScroll);
     io.disconnect();
-    [heroMedia, heroShade, heroText].forEach(function (el) { el.removeAttribute('style'); });
+    heroText.removeAttribute('style');
     stages.forEach(function (s) { s.classList.remove('active', 'past'); });
     document.querySelectorAll('.count').forEach(function (el) { el.textContent = el.dataset.to; });
   }
