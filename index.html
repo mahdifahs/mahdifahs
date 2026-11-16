@@ -1,1006 +1,887 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - FAHS Mahdi</title>
-  <!-- Polices -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Librairies -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahdi FAHS — Pentest et sécurité Active Directory / Azure</title>
+<meta name="description" content="Portfolio de Mahdi FAHS, étudiant en Master 2 Cyberdéfense et Sécurité de l'Information (INSA Hauts-de-France). Pentest et sécurité Active Directory / Azure. Recherche un stage de fin d'études de 6 mois à partir du 1er mars 2027.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="img/favicon.png">
+<script>
+  (function () {
+    var r = document.documentElement;
+    r.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('motion');
+  })();
+</script>
+<style>
+  :root {
+    --white: #ffffff;
+    --light: #f5f5f7;
+    --black: #000000;
+    --ink: #1d1d1f;
+    --grey: #6e6e73;
+    --grey-dark: #a1a1a6;
+    --line: #d2d2d7;
+    --accent: #0066cc;
+    --accent-dark: #2997ff;
+    --radius: 24px;
+    --ease: cubic-bezier(.2, .7, .2, 1);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif;
+    --nav-h: 48px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--ink);
+    background: var(--white);
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .dark :focus-visible { outline-color: var(--accent-dark); }
+  h1, h2, h3, p, ul { margin: 0; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-<!-- Animate.css pour l'animation -->
-<link href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" rel="stylesheet">
+  .skip {
+    position: fixed; top: -100px; left: 16px; z-index: 200;
+    background: var(--white); color: var(--ink); padding: 10px 16px; border-radius: 999px;
+    font-weight: 600; box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  }
+  .skip:focus { top: 60px; }
 
-  <style>
-    /* Général */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      text-align: center;
+  /* ---------- Barre de progression ---------- */
+  .progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 120;
+    background: var(--accent-dark); transform-origin: 0 50%; transform: scaleX(0);
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(22, 22, 23, .78);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    color: #f5f5f7;
+  }
+  .nav-inner {
+    max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 22px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .brand { color: #f5f5f7; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+  .brand:hover { text-decoration: none; opacity: .8; }
+  .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; padding: 0; }
+  .nav-links a { color: rgba(245,245,247,.82); font-size: 12.5px; transition: color .2s; }
+  .nav-links a:hover { color: #fff; text-decoration: none; }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    background: var(--accent); color: #fff !important; border-radius: 999px;
+    padding: 6px 14px; font-size: 12.5px; font-weight: 500; white-space: nowrap;
+    transition: background .2s, transform .2s;
+  }
+  .pill:hover { background: #0077ed; text-decoration: none; }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .menu-btn {
+    display: none; background: none; border: 0; color: #f5f5f7; padding: 8px; cursor: pointer;
+    width: 40px; height: 40px; border-radius: 10px;
+  }
+  .menu-btn span { display: block; width: 18px; height: 1.5px; background: currentColor; margin: 4px auto; transition: transform .3s var(--ease); }
+  .menu-btn[aria-expanded="true"] span:first-child { transform: translateY(2.75px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:last-child { transform: translateY(-2.75px) rotate(-45deg); }
+
+  /* ---------- Structure générale ---------- */
+  section { position: relative; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+  .pad { padding: 140px 0; }
+  .bg-white { background: var(--white); }
+  .bg-light { background: var(--light); }
+  .dark { background: var(--black); color: #f5f5f7; }
+  .dark a { color: var(--accent-dark); }
+  .eyebrow {
+    font-size: 17px; font-weight: 600; color: var(--grey); margin-bottom: 14px; letter-spacing: 0;
+  }
+  .dark .eyebrow { color: var(--grey-dark); }
+  .headline {
+    font-size: clamp(40px, 7vw, 80px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em;
+  }
+  .headline .l { display: block; }
+  .headline .l > span { display: inline-block; }
+  .lede { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.4; color: var(--grey); max-width: 720px; margin-top: 22px; font-weight: 500; letter-spacing: -0.015em; }
+  .dark .lede { color: var(--grey-dark); }
+  .center { text-align: center; }
+  .center .lede { margin-left: auto; margin-right: auto; }
+  .muted { color: var(--grey); }
+  .dark .muted { color: var(--grey-dark); }
+
+  /* ---------- Animations d'apparition ---------- */
+  .motion [data-reveal] {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 1s var(--ease), transform 1s var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  .motion [data-reveal].in { opacity: 1; transform: none; }
+  .motion [data-lines] .l > span {
+    opacity: 0; transform: translateY(0.45em);
+    transition: opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  .motion [data-lines] .l:nth-child(2) > span { transition-delay: .12s; }
+  .motion [data-lines] .l:nth-child(3) > span { transition-delay: .24s; }
+  .motion [data-lines] .l:nth-child(4) > span { transition-delay: .36s; }
+  .motion [data-lines].in .l > span { opacity: 1; transform: none; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--black); color: #f5f5f7; }
+  .hero-stage {
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    padding: calc(var(--nav-h) + 9vh) 22px 0; overflow: hidden; text-align: center;
+  }
+  .motion .hero { height: 175vh; }
+  .motion .hero-stage { position: sticky; top: 0; height: 100vh; height: 100svh; }
+  .hero-text { will-change: transform, opacity; }
+  .hero-kicker { font-size: clamp(15px, 1.6vw, 19px); font-weight: 600; color: var(--grey-dark); margin-bottom: 12px; letter-spacing: 0; }
+  .hero h1 {
+    font-size: clamp(56px, 10vw, 96px); line-height: 1; font-weight: 700; letter-spacing: -0.045em;
+  }
+  .hero h1 .l > span { display: inline-block; }
+  .hero-sub {
+    font-size: clamp(18px, 2.1vw, 24px); line-height: 1.35; color: var(--grey-dark); font-weight: 500;
+    max-width: 640px; margin: 20px auto 0; letter-spacing: -0.015em;
+  }
+  .hero-sub strong { color: #f5f5f7; font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 28px; margin-top: 28px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--accent); color: #fff !important; border-radius: 999px;
+    padding: 12px 22px; font-size: 17px; font-weight: 500; transition: background .2s;
+  }
+  .btn:hover { background: #0077ed; text-decoration: none; }
+  .link-arrow { font-size: 17px; font-weight: 500; }
+  .link-arrow::after { content: " \203A"; font-size: 1.15em; }
+  .hero-media {
+    position: relative; margin-top: 6vh;
+    height: min(52vh, 560px); aspect-ratio: 4 / 5;
+    border-radius: 28px; overflow: hidden; transform-origin: 50% 0;
+    will-change: transform; background: #111;
+  }
+  .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+  .hero-shade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+
+  /* ---------- Chiffres clés ---------- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 72px; }
+  .stat { text-align: center; padding: 8px; }
+  .stat-num {
+    font-size: clamp(64px, 9vw, 112px); font-weight: 700; line-height: 1; letter-spacing: -0.05em;
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(180deg, #1d1d1f 30%, #6e6e73 130%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat-num small { font-size: .32em; letter-spacing: -0.02em; font-weight: 600; margin-right: .15em; }
+  .stat-label { margin-top: 14px; font-size: 19px; font-weight: 600; letter-spacing: -0.015em; }
+  .stat-desc { margin-top: 4px; color: var(--grey); font-size: 15px; }
+
+  /* ---------- À propos ---------- */
+  .statement {
+    font-size: clamp(30px, 4.6vw, 56px); line-height: 1.12; font-weight: 700; letter-spacing: -0.035em;
+    max-width: 960px;
+  }
+  .statement .w { transition: color .35s; }
+  .motion .statement .w { color: #c7c7cc; }
+  .motion .statement .w.on { color: var(--ink); }
+  .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 80px; }
+  .about-card { background: var(--white); border-radius: var(--radius); padding: 32px; }
+  .about-card h3 { font-size: 21px; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .about-card p { color: var(--grey); font-size: 17px; }
+  .about-card strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Parcours sticky ---------- */
+  .story { background: var(--black); color: #f5f5f7; padding: 120px 0; }
+  .story-frame { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+  .story-head { margin-bottom: 56px; }
+  .story-stages { display: grid; gap: 64px; }
+  .stage { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: center; }
+  .stage .stage-year {
+    font-size: clamp(72px, 11vw, 150px); max-width: none; font-weight: 700; letter-spacing: -0.05em; line-height: 1;
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(180deg, #ffffff 20%, #6e6e73 140%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stage .stage-year small { display: block; font-size: 17px; letter-spacing: 0; color: var(--grey-dark); -webkit-text-fill-color: var(--grey-dark); margin-bottom: 14px; font-weight: 600; }
+  .stage h3 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 14px; }
+  .stage p { color: var(--grey-dark); font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; max-width: 520px; }
+  .stage p strong { color: #f5f5f7; font-weight: 600; }
+  .rail { display: none; }
+
+  .motion .story { padding: 0; height: calc(var(--n, 5) * 90vh); }
+  .motion .story-frame {
+    position: sticky; top: 0; height: 100vh; height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: var(--nav-h);
+  }
+  .motion .story-head { margin-bottom: 0; position: absolute; top: calc(var(--nav-h) + 8vh); left: 22px; right: 22px; }
+  .motion .story-stages { position: relative; height: 50vh; min-height: 300px; display: block; }
+  .motion .stage {
+    position: absolute; inset: 0;
+    opacity: 0; transform: translateY(36px); pointer-events: none;
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .motion .stage.past { transform: translateY(-36px); }
+  .motion .stage.active { opacity: 1; transform: none; pointer-events: auto; }
+  .motion .rail {
+    display: flex; gap: 8px; position: absolute; left: 22px; bottom: 9vh; align-items: center;
+  }
+  .rail i { display: block; width: 8px; height: 8px; border-radius: 99px; background: #424245; transition: width .5s var(--ease), background .5s; }
+  .rail i.on { width: 28px; background: #f5f5f7; }
+
+  /* ---------- Expérience ---------- */
+  .jobs { display: grid; gap: 20px; margin-top: 64px; }
+  .job {
+    background: var(--light); border-radius: 28px; padding: 44px;
+    display: grid; grid-template-columns: 96px 1fr; gap: 32px;
+  }
+  .job-logo {
+    width: 96px; height: 96px; border-radius: 22px; overflow: hidden; background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 26px; letter-spacing: -0.03em; color: var(--ink);
+    box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  }
+  .job-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .job-meta { font-size: 15px; color: var(--grey); font-weight: 500; }
+  .job h3 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.03em; line-height: 1.12; margin: 6px 0 4px; }
+  .job-org { font-size: 17px; color: var(--ink); font-weight: 500; }
+  .job ul { margin-top: 22px; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .job li { position: relative; padding-left: 22px; color: #424245; }
+  .job li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+
+  /* ---------- Bento ---------- */
+  .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-top: 64px; }
+  .card {
+    grid-column: span 6; border-radius: var(--radius); padding: 36px; background: var(--white);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease), opacity 1s var(--ease);
+    display: flex; flex-direction: column;
+  }
+  .bg-white .card { background: var(--light); }
+  .card:hover { transform: translateY(-4px) scale(1.005); box-shadow: 0 18px 40px rgba(0,0,0,.08); }
+  .motion .card[data-reveal].in:hover { transform: translateY(-4px) scale(1.005); }
+  .card.s3 { grid-column: span 3; } .card.s4 { grid-column: span 4; } .card.s5 { grid-column: span 5; }
+  .card.s7 { grid-column: span 7; } .card.s8 { grid-column: span 8; } .card.s12 { grid-column: span 12; }
+  .card.ink { background: var(--black) !important; color: #f5f5f7; }
+  .card.ink .card-text, .card.ink .card-tag { color: var(--grey-dark); }
+  .card.ink .chip, .bg-light .card.ink .chip { background: #1d1d1f; color: #f5f5f7; }
+  .card.ink a { color: var(--accent-dark); }
+  .card-tag { font-size: 14px; font-weight: 600; color: var(--grey); margin-bottom: 10px; letter-spacing: 0; }
+  .card h3 { font-size: clamp(24px, 2.6vw, 30px); letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 12px; }
+  .card-text { color: var(--grey); font-size: 17px; }
+  .card-text + .card-text { margin-top: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; padding: 0; list-style: none; }
+  .chip { background: var(--light); color: var(--ink); border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 500; }
+  .chip-label { font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 18px; text-transform: uppercase; letter-spacing: .04em; }
+  .card.ink .chip-label { color: var(--grey-dark); }
+  .card-foot { margin-top: auto; padding-top: 22px; }
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+  .pillar { background: var(--light); border-radius: 16px; padding: 16px 18px; }
+  .pillar b { display: block; font-size: 16px; letter-spacing: -0.015em; }
+  .pillar span { font-size: 14px; color: var(--grey); }
+  .big-num { font-size: 15px; font-weight: 600; color: var(--grey); font-variant-numeric: tabular-nums; margin-bottom: 26px; }
+  .card.ink .big-num { color: var(--grey-dark); }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; color: var(--grey); border: 1px solid var(--line); padding: 2px 9px; border-radius: 999px; vertical-align: middle; margin-left: 6px; letter-spacing: 0; }
+
+  /* ---------- Formation ---------- */
+  .edu { margin-top: 64px; border-top: 1px solid var(--line); }
+  .edu-row {
+    display: grid; grid-template-columns: 200px 1fr; gap: 32px; padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .edu-year { font-size: 17px; font-weight: 600; color: var(--grey); font-variant-numeric: tabular-nums; padding-top: 4px; }
+  .edu-row h3 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.03em; line-height: 1.15; }
+  .edu-row p { color: var(--grey); margin-top: 6px; }
+  .now { display: inline-block; margin-left: 8px; font-size: 12px; font-weight: 600; color: #fff; background: var(--ink); padding: 3px 10px; border-radius: 999px; vertical-align: middle; letter-spacing: 0; }
+
+  /* ---------- Qualités ---------- */
+  .traits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 64px; }
+  .trait { background: var(--light); border-radius: var(--radius); padding: 30px; }
+  .trait h3 { font-size: 22px; letter-spacing: -0.025em; margin-bottom: 8px; }
+  .trait p { color: var(--grey); font-size: 16px; }
+  .interests { margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+  .interests .chip { font-size: 17px; padding: 10px 20px; }
+  .interests-label { color: var(--grey); font-weight: 600; margin-right: 6px; }
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 160px 0 140px; }
+  .contact .headline { font-size: clamp(48px, 9vw, 96px); }
+  .contact-mail { display: inline-block; margin-top: 44px; font-size: clamp(22px, 3.4vw, 36px); font-weight: 600; letter-spacing: -0.025em; }
+  .socials { display: flex; justify-content: center; gap: 32px; margin-top: 30px; flex-wrap: wrap; }
+  footer { background: var(--black); color: var(--grey-dark); font-size: 12px; border-top: 1px solid #1d1d1f; }
+  footer .wrap { padding-top: 22px; padding-bottom: 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      position: absolute; top: var(--nav-h); left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: rgba(22,22,23,.96); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+      padding: 8px 22px 22px; visibility: hidden; opacity: 0; transform: translateY(-8px);
+      transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
     }
+    .nav-links.open { visibility: visible; opacity: 1; transform: none; }
+    .nav-links a { display: block; padding: 14px 0; font-size: 20px; font-weight: 600; color: #f5f5f7; border-bottom: 1px solid #333336; }
+    .pad { padding: 100px 0; }
+    .about-grid, .traits { grid-template-columns: 1fr 1fr; }
+    .card, .card.s3, .card.s4, .card.s5, .card.s7, .card.s8 { grid-column: span 12; }
+    .card.half-md { grid-column: span 6; }
+    .stage { grid-template-columns: 1fr; gap: 18px; align-content: start; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .pad { padding: 88px 0; }
+    .stats { grid-template-columns: 1fr; gap: 44px; margin-top: 56px; }
+    .about-grid, .traits { grid-template-columns: 1fr; }
+    .about-grid { margin-top: 56px; }
+    .card { padding: 28px; }
+    .card.half-md { grid-column: span 12; }
+    .pillars { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .job { grid-template-columns: 1fr; padding: 28px; gap: 20px; }
+    .job-logo { width: 72px; height: 72px; border-radius: 18px; font-size: 20px; }
+    .edu-row { grid-template-columns: 1fr; gap: 6px; padding: 26px 0; }
+    .hero-stage { padding-top: calc(var(--nav-h) + 6vh); }
+    .hero-media { height: min(44vh, 460px); margin-top: 4vh; border-radius: 22px; }
+    .cta { margin-top: 22px; }
+    .motion .story-head { top: calc(var(--nav-h) + 5vh); }
+    .motion .story-stages { height: 58vh; margin-top: 10vh; }
+    .motion .rail { bottom: 6vh; }
+    .contact { padding: 120px 0 100px; }
+  }
 
-    /* Menu */
-    nav {
-      background-color: rgba(255, 255, 255, 0.8);
-      width: 80%;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      padding: 10px 0;
-      backdrop-filter: blur(10px); /* Effet de floutage sur le menu */
-      transition: top 0.3s ease;
-    }
-
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .navbar-nav .nav-item {
-      margin: 0 8px;
-    }
-
-    .navbar-nav .nav-link {
-      color: #333;
-      font-size: 1em;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 4px 12px;
-      transition: transform 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-    }
-
-    .navbar-nav .nav-item:hover .nav-link {
-      transform: scale(1.05);
-      color: #FFB800;
-    }
-
-    /* Bloc d'accueil */
-    .accueil {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 85vh;
-      padding-top: 120px; /* Décalage pour ne pas que le texte soit masqué par le menu */
-      gap: 20px;
-    }
-
-    .texte-accueil {
-      text-align: left;
-      max-width: 450px;
-    }
-
-    .texte-accueil h1 {
-      font-size: 4.5em;
-      font-weight: bold;
-      color: #FFB800;
-      transition: transform 0.3s ease;
-    }
-
-    .texte-accueil h1:hover {
-      transform: scale(1.05);
-    }
-
-    .texte-accueil p {
-      font-size: 1.2em;
-      color: #666;
-    }
-
-    .accueil img {
-      width: 500px;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      border: 5px solid #FFB800;
-      animation: bubbleAnimate 2s ease-in-out infinite;
-    }
-
-    @keyframes bubbleAnimate {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Bloc À propos de moi */
-    .about {
-      padding: 40px 20px;
-    }
-
-    .about h2 {
-      font-size: 2.5em;
-      color: #FFB800;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .about h2:hover {
-      transform: scale(1.05);
-    }
-
-    .about p {
-      font-size: 1.1em;
-      color: #666;
-      max-width: 750px;
-      margin: 20px auto;
-    }
-
-    /* Pied de page */
-    footer {
-      padding: 10px 0;
-      text-align: center;
-      backdrop-filter: blur(10px); /* Effet flou pour le pied de page */
-    }
-
-    footer a {
-      margin: 0 15px;
-      display: inline-block;
-    }
-
-    footer img {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.3s ease;
-    }
-
-    footer img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Style pour les logos sous le texte d'accueil */
-    .logos a {
-      margin-top: 20px;
-      display: inline-block;
-    }
-
-    .logos img {
-      width: 30px;
-      height: 30px;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .logos img:hover {
-      transform: scale(1.1);
-      border: none; /* Enlève les bordures des logos */
-    }
-
-    /* Effet flouté pour les éléments fixes */
-    .navbar, footer {
-      position: fixed;
-      z-index: 999;
-      width: 100%;
-    }
-
-    .navbar {
-      top: 0;
-    }
-
-    footer {
-      bottom: 0;
-    }
-
-    .content {
-      margin-top: 100px; /* Pour compenser la hauteur du menu */
-      margin-bottom: 60px; /* Pour compenser la hauteur du pied de page */
-    }
-
-    /* Mots en jaune */
-    .highlight {
-      color: #FFB800;
-      font-weight: bold;
-    }
-  </style>
+  /* ---------- Mouvement réduit ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .card:hover { transform: none; }
+    .progress { display: none; }
+  }
+</style>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progress" aria-hidden="true"></div>
 
-  <!-- Menu -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="navbar-collapse">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#about">A propos de moi</a></li>
-        <li class="nav-item"><a class="nav-link" href="#career">Mon parcours</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Expériences professionnelles</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Mes compétences</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projets">Mes projets</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contacter moi</a></li>
-      </ul>
+<header class="nav">
+  <nav class="nav-inner" aria-label="Navigation principale">
+    <a class="brand" href="#accueil">Mahdi FAHS</a>
+    <ul class="nav-links" id="menu">
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#formation">Formation</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="pill" href="#contact">Me contacter</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span>
+      </button>
     </div>
   </nav>
+</header>
 
-  <!-- Bloc d'accueil -->
-  <section class="accueil" data-aos="fade-up">
-    <div class="texte-accueil">
-      <h1>Bonjour, je suis <span>FAHS Mahdi</span></h1>
-      <p>Étudiant BUT Réseaux et Télécommunications, parcours Cybersécurité et Alternant chez SSTi03</p>
+<main id="contenu">
 
-      <!-- Logos LinkedIn et GitHub sous le texte -->
-      <div class="logos">
-        <a href="https://fr.linkedin.com/in/mahdi-fahs-21a98116a" target="_blank">
-          <img src="linkedin.svg" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/mahdifahs/" target="_blank">
-          <img src="github.svg" alt="GitHub">
-        </a>
+  <!-- ===== Accueil ===== -->
+  <section class="hero" id="accueil" aria-label="Accueil">
+    <div class="hero-stage">
+      <div class="hero-text">
+        <p class="hero-kicker">Pentest et sécurité Active Directory / Azure</p>
+        <h1 data-lines><span class="l"><span>Mahdi FAHS.</span></span></h1>
+        <p class="hero-sub">Étudiant en Master 2 Cyberdéfense et Sécurité de l'Information à l'INSA Hauts-de-France. <strong>Je recherche un stage de fin d'études de 6&nbsp;mois à partir du 1<sup>er</sup>&nbsp;mars&nbsp;2027.</strong></p>
+        <div class="cta">
+          <a class="btn" href="#contact">Me contacter</a>
+          <a class="link-arrow" href="#projets">Voir mes projets</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="fahs-mahdi.jpg" width="688" height="1280" alt="Portrait de Mahdi FAHS" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
       </div>
     </div>
-    <img src="fahs-mahdi.jpg" alt="Photo de Fahs Mahdi" data-aos="zoom-in" data-aos-duration="1000">
   </section>
 
-  <!-- Bloc A propos de moi -->
-  <section id="about" class="about" data-aos="fade-up" data-aos-duration="1000">
-<h2>À propos de moi</h2>
-<p>Proactif et passionné par la cybersécurité, je suis <span class="highlight">FAHS Mahdi</span>, étudiant en <span class="highlight">Réseaux et Télécommunications</span>, spécialisé en <span class="highlight">Cybersécurité</span>. Mon objectif : anticiper et contrer les menaces pour garantir des systèmes fiables et sécurisés.</p>
-<p>Formé en <span class="highlight">Pentesting</span> chez <span class="highlight">TCM Security</span>, j’ai développé une expertise en détection et exploitation des vulnérabilités sur les <span class="highlight">applications web</span>, les <span class="highlight">API</span> et les <span class="highlight">réseaux LAN</span>. J’ai également une solide expérience en <span class="highlight">gestion et sécurisation des systèmes</span> sous <span class="highlight">Windows</span> et <span class="highlight">Linux</span>.</p>
-<p>Autonome et toujours en quête d’apprentissage, je suis à la recherche d’une <strong>alternance en Pentesting ou administration système</strong>, afin d’apporter mes compétences et mon engagement au sein d’une équipe dynamique.</p>
-
-
-
-<!-- Mon Parcours -->
-<section id="career" class="parcours" data-aos="fade-up" data-aos-duration="1000">
-  <h2>Mon Parcours</h2>
-  <div class="timeline-container">
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>2025 - 2024 : <span class="highlight">Troisième année en BUT Réseau et Télécommunications</span> - Spécialisation <span class="highlight">Cybersécurité</span></h3>
-        <p>Actuellement en troisième année de BUT Réseaux et Télécommunications à l'IUT de Clermont-Ferrand, je me spécialise dans la <span class="highlight">cybersécurité</span>, avec un focus sur la <span class="highlight">sécurisation des infrastructures réseaux</span>, les <span class="highlight">tests de pénétration</span> et la gestion des <span class="highlight">systèmes sécurisés</span>.</p>
+  <!-- ===== Chiffres clés ===== -->
+  <section class="bg-white pad" aria-labelledby="chiffres-titre">
+    <div class="wrap center">
+      <p class="eyebrow" data-reveal>En bref</p>
+      <h2 class="headline" id="chiffres-titre" data-lines><span class="l"><span>Prêt pour</span></span><span class="l"><span>la suite.</span></span></h2>
+      <div class="stats" data-stagger>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span class="count" data-to="2">2</span></div>
+          <p class="stat-label">ans d'alternance</p>
+          <p class="stat-desc">en administration système et cybersécurité</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span class="count" data-to="6">6</span></div>
+          <p class="stat-label">projets</p>
+          <p class="stat-desc">pentest, durcissement et infrastructure</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><small>mars</small><span class="count" data-from="2020" data-to="2027">2027</span></div>
+          <p class="stat-label">début du stage</p>
+          <p class="stat-desc">stage de fin d'études de 6&nbsp;mois</p>
+        </div>
       </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>2023 - 2024 : <span class="highlight">Deuxième année en BUT Réseaux et Télécommunications</span> - Spécialisation <span class="highlight">Cybersécurité</span></h3>
-        <p>En deuxième année de BUT Réseaux et Télécommunications, j'ai approfondi mes connaissances en <span class="highlight">cybersécurité</span> et en gestion des réseaux. J'ai également commencé ma formation chez <span class="highlight">TCM Security</span> en <span class="highlight">Web Penetration Testing</span> et <span class="highlight">API</span>.</p>
+  </section>
+
+  <!-- ===== À propos ===== -->
+  <section class="bg-light pad" id="a-propos" aria-labelledby="a-propos-titre">
+    <div class="wrap">
+      <h2 class="eyebrow" id="a-propos-titre" data-reveal>À propos</h2>
+      <p class="statement" data-words>Passionné de cybersécurité, mon objectif est d'anticiper et de contrer les menaces pour garantir des systèmes fiables et sécurisés.</p>
+      <div class="about-grid" data-stagger>
+        <article class="about-card" data-reveal>
+          <h3>Formé au pentest</h3>
+          <p>Formé avec <strong>TCM Security</strong> (Practical Ethical Hacking, Web et API) à la détection et à l'exploitation de vulnérabilités sur les applications web, les API et les réseaux LAN.</p>
+        </article>
+        <article class="about-card" data-reveal>
+          <h3>Ancré dans le terrain</h3>
+          <p><strong>2 ans d'alternance</strong> en administration système et cybersécurité, avec une solide expérience de la gestion et de la sécurisation des systèmes Windows et Linux.</p>
+        </article>
+        <article class="about-card" data-reveal>
+          <h3>Spécialisé</h3>
+          <p>Je me spécialise dans le <strong>pentest Active Directory</strong>, l'audit PingCastle et le durcissement Windows, Linux et Azure.</p>
+        </article>
       </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>2022 - 2023 : <span class="highlight">Première année de BUT Réseaux et Télécommunications</span> à l'IUT UCA</h3>
-        <p>J'ai commencé mes études en <span class="highlight">Réseau et Télécommunications</span> à l'IUT de Clermont-Ferrand, me familiarisant avec les bases de la gestion des réseaux, des systèmes et de la <span class="highlight">cybersécurité</span>.</p>
+  </section>
+
+  <!-- ===== Parcours (section sticky) ===== -->
+  <section class="story" id="parcours" aria-labelledby="parcours-titre" style="--n:5">
+    <div class="story-frame">
+      <div class="story-head">
+        <p class="eyebrow">Mon parcours</p>
+        <h2 class="sr-only" id="parcours-titre">Mon parcours</h2>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>2021 - 2022 : <span class="highlight">Baccalauréat Scientifique</span> et <span class="highlight">Certification en Ethical Hacking</span></h3>
-        <p>En 2022, j'ai obtenu mon Baccalauréat Scientifique avec des spécialités en Mathématiques et Biologie. En parallèle, j'ai obtenu une certification en <span class="highlight">"Practical Ethical Hacking"</span> chez <span class="highlight">TCM Security</span>, me permettant de découvrir les bases du hacking éthique et de la cybersécurité.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-/* Mon Parcours */
-.parcours {
-  background-color: #fff;
-  padding: 60px 20px;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.parcours h2 {
-  font-size: 2.8em;
-  color: #FFB800;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.timeline-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
-
-.timeline-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.timeline-icon {
-  width: 20px;
-  height: 20px;
-  background-color: #FFB800;
-  border-radius: 50%;
-  margin-right: 20px;
-  transition: transform 0.3s ease;
-}
-
-.timeline-icon:hover {
-  transform: scale(1.2);
-}
-
-.timeline-content {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  text-align: left;
-  opacity: 0;
-  animation: slideInLeft 1s ease forwards;
-}
-
-.timeline-content h3 {
-  font-size: 1.2em;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.timeline-content p {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.timeline-content a {
-  color: #FFB800;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
-  margin-top: 10px;
-}
-
-.timeline-content a:hover {
-  color: #333;
-}
-
-.highlight {
-  color: #FFB800;
-  font-weight: bold;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-</style>
-
-
-
-<!-- Section Expérience professionnelle -->
-<section id="experience" class="section-experience">
-  <h2 class="titre-experience">Expérience Professionnelle</h2>
-  <div class="timeline-container-experience">
-    <div class="timeline-item-experience">
-      <div class="timeline-dot-experience"></div>
-      <div class="timeline-content-experience">
-        <h3>Octobre 2023 - Présent : Administration Système et Sécurité</h3>
-        <p>
-          Depuis octobre 2023, j'occupe un poste en administration système et sécurité, où j'ai pu mettre en place des mesures de sécurité avancées pour protéger les infrastructures IT. 
-          J'ai renforcé la sécurité d'Active Directory en traitant des vulnérabilités critiques telles que LLMNR, Zerologon, NTLM, IPv6, et Kerberos, et en déployant des solutions de protection contre les attaques par ransomware. 
-          Une de mes missions clés a été d'implémenter des politiques de sécurité sur les systèmes et utilisateurs afin de prévenir les attaques ciblées et renforcer la défense contre les domaines malveillants. 
-          J'ai également assuré la gestion et la synchronisation des utilisateurs avec Azure AD, tout en maîtrisant divers outils d'audit comme Ping Castle, ORCA, Scuba Gear, et Windows Defender Scoreboard.
-          Enfin, j'ai déployé et configuré Wazuh pour assurer une détection proactive des menaces et une gestion efficace des alertes de sécurité.
-        </p>
-      </div>
-      <!-- Logo de l'entreprise -->
-      <div class="logo-entreprise">
-        <img id="logo-entreprise" src="ssti03.jpeg" alt="Logo SSTi03">
-      </div>
-    </div>
-    <!-- Nouveau bloc pour SOCOBA -->
-    <div class="timeline-item-experience">
-      <div class="timeline-dot-experience"></div>
-      <div class="timeline-content-experience">
-        <h3>Juin 2022 - Septembre 2023 : Support Utilisateur et Installation de Systèmes de Sécurité</h3>
-        <p>
-          Pendant cette période, j'ai travaillé chez SOCOBA en Guinée, où j'étais responsable du support utilisateur, de l'installation de caméras de surveillance et de systèmes d'alerte. 
-          Mes principales tâches comprenaient :
-          <ul>
-            <li>Assurer le support technique aux utilisateurs pour résoudre les problèmes matériels et logiciels.</li>
-            <li>Installer et configurer des caméras de surveillance pour garantir la sécurité des locaux.</li>
-            <li>Mettre en place des systèmes d'alerte pour prévenir les intrusions et autres incidents de sécurité.</li>
-            <li>Former les utilisateurs à l'utilisation des nouveaux équipements et systèmes de sécurité.</li>
-          </ul>
-        </p>
-      </div>
-      <!-- Logo de l'entreprise -->
-      <div class="logo-entreprise">
-        <img id="logo-entreprise" src="pngtree-vector-illustration-of-guineas-flag-on-a-white-background-vector-picture-image_10204151.png
-" alt="Logo SOCOBA">
-      </div>
-    </div>
-  </div>
-
-
-<style>
-/* Section Expérience professionnelle */
-
-/* Logo de l'entreprise */
-#logo-entreprise {
-  width: 150px; /* Taille du logo */
-  height: 150px; /* Taille du logo */
-  border-radius: 50%; /* Rend l'image circulaire */
-  border: 5px solid #fcd702; /* Bordure jaune */
-  object-fit: cover; /* Pour que l'image s'ajuste bien dans le cercle */
-  margin-top: 20px;
-}
-
-.logo-entreprise {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.logo-entreprise img {
-  width: 150px; /* Ajuste la taille selon tes préférences */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.logo-entreprise img:hover {
-  transform: scale(1.1); /* Effet de zoom lors du survol */
-}
-
-.section-experience {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 80px;
-}
-
-.titre-experience {
-  font-size: 2.8em;
-  color: #FFB800;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: fadeInExperience 1s ease-out;
-}
-
-.timeline-container-experience {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.timeline-item-experience {
-  position: relative;
-  width: 80%;
-  max-width: 800px;
-  padding: 30px;
-  margin: 20px 0;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  animation: slideInExperience 0.8s ease-out;
-}
-
-.timeline-dot-experience {
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  width: 20px;
-  height: 20px;
-  background-color: #FFB800;
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
-.timeline-content-experience {
-  padding-left: 40px;
-  text-align: left;
-}
-
-.timeline-item-experience h3 {
-  font-size: 1.6em;
-  color: #333;
-  font-weight: bold;
-}
-
-.timeline-item-experience ul {
-  margin-top: 15px;
-  padding-left: 20px;
-  font-size: 1.1em;
-  color: #555;
-}
-
-.timeline-item-experience ul li {
-  margin-bottom: 10px;
-}
-
-@keyframes fadeInExperience {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInExperience {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-</style>
-
-
-
-<!-- Section des compétences -->
-<section class="skills" id="skills">
-  <div class="container">
-    <h2 class="competence-title animate__animated animate__fadeInUp">Mes Compétences</h2>
-
-    <div class="row">
-      <!-- Compétence 1 (Pentesting) -->
-      <div class="col-md-4 mb-4">
-        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
-          <div class="competence-icon">
-            <img src="https://limessecurity.com/wp-content/uploads/2021/08/Icon_Infastructure_rot-1.png" alt="Pentesting Logo" class="logo-inside-card">
+      <div class="story-stages">
+        <article class="stage">
+          <p class="stage-year"><small>Les débuts · 2021 – 2022</small>2021</p>
+          <div>
+            <h3>Le goût du hacking éthique.</h3>
+            <p>Baccalauréat scientifique (Mathématiques, Biologie) et certification <strong>Practical Ethical Hacking</strong> chez TCM Security.</p>
           </div>
-          <h3><span class="highlight-yellow">Pentesting</span></h3>
-          <p class="competence-text">
-            Réalisation de <span class="highlight-yellow">tests de pénétration</span> sur des applications Web et API pour identifier et corriger les vulnérabilités. Formé chez <span class="highlight-yellow">TCM Security</span>, j'évalue la robustesse des systèmes.
-          </p>
-        </div>
-      </div>
-
-      <!-- Compétence 2 (Sécurisation des réseaux) -->
-      <div class="col-md-4 mb-4">
-        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
-          <div class="competence-icon">
-            <img src="https://w7.pngwing.com/pngs/899/691/png-transparent-computer-network-global-network-global-network-material-text-globe-logo.png" alt="Networking Logo" class="logo-inside-card">
+        </article>
+        <article class="stage">
+          <p class="stage-year"><small>Le terrain · 2022 – 2023</small>2022</p>
+          <div>
+            <h3>Premiers pas en entreprise.</h3>
+            <p>Support utilisateur et installation de systèmes de sécurité chez <strong>SOCOBA</strong>, en Guinée. En parallèle, début du BUT Réseaux et Télécommunications.</p>
           </div>
-          <h3><span class="highlight-yellow">Sécurisation des réseaux</span></h3>
-          <p class="competence-text">
-            Mise en place de <span class="highlight-yellow">solutions pour sécuriser les infrastructures réseau</span>, incluant des stratégies de gestion des pare-feu et des outils de détection d'intrusion (IDS).
-          </p>
-        </div>
-      </div>
-
-      <!-- Compétence 3 (Gestion des systèmes) -->
-      <div class="col-md-4 mb-4">
-        <div class="competence-card p-4 text-center animate__animated animate__fadeInUp">
-          <div class="competence-icon">
-            <img src="https://www.clipartmax.com/png/middle/115-1153350_maintenance-system-logo.png" alt="System Management Logo" class="logo-inside-card">
+        </article>
+        <article class="stage">
+          <p class="stage-year"><small>L'alternance · 2023 – 2025</small>2023</p>
+          <div>
+            <h3>Deux ans à sécuriser un&nbsp;SI.</h3>
+            <p>Administrateur système et cybersécurité chez <strong>SSTI03</strong>, à Vichy, en alternance avec le BUT R&amp;T parcours Cybersécurité.</p>
           </div>
-          <h3><span class="highlight-yellow">Gestion des systèmes</span></h3>
-          <p class="competence-text">
-            Configuration et administration des <span class="highlight-yellow">serveurs DNS et DHCP</span> sous Linux et Windows. Mise en place de <span class="highlight-yellow">VPN sécurisés</span> et gestion des pare-feu avec <span class="highlight-yellow">Wazuh</span> pour la surveillance.
-          </p>
+        </article>
+        <article class="stage">
+          <p class="stage-year"><small>Le Master · 2025 – 2027</small>2025</p>
+          <div>
+            <h3>Cap sur la cyberdéfense.</h3>
+            <p>Master Cyberdéfense et Sécurité de l'Information à l'<strong>INSA Hauts-de-France</strong>, à Valenciennes. Projet de Master 1 : pentest d'une application LLM.</p>
+          </div>
+        </article>
+        <article class="stage">
+          <p class="stage-year"><small>La suite · dès le 1<sup>er</sup> mars</small>2027</p>
+          <div>
+            <h3>Votre équipe&nbsp;?</h3>
+            <p>Je recherche un <strong>stage de fin d'études de 6&nbsp;mois</strong> en pentest et sécurité Active Directory / Azure. <a href="#contact">Me contacter</a></p>
+          </div>
+        </article>
+      </div>
+      <div class="rail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- ===== Expérience ===== -->
+  <section class="bg-white pad" id="experience" aria-labelledby="experience-titre">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Expérience professionnelle</p>
+      <h2 class="headline" id="experience-titre" data-lines><span class="l"><span>Sur le terrain,</span></span><span class="l"><span>au quotidien.</span></span></h2>
+      <div class="jobs" data-stagger>
+        <article class="job" data-reveal>
+          <div class="job-logo"><img src="ssti03.jpeg" width="200" height="200" alt="Logo du SSTI03" loading="lazy"></div>
+          <div>
+            <p class="job-meta">Octobre 2023 – septembre 2025 · Alternance</p>
+            <h3>Administrateur système et cybersécurité</h3>
+            <p class="job-org">SSTI03 (Service de Santé au Travail), Vichy</p>
+            <ul>
+              <li>Durcissement d'Active Directory face aux vulnérabilités LLMNR, Zerologon, NTLM, IPv6 et Kerberos.</li>
+              <li>Protections contre les ransomwares et politiques de sécurité sur les systèmes et les utilisateurs, pour prévenir les attaques ciblées et bloquer les domaines malveillants.</li>
+              <li>Gestion et synchronisation des utilisateurs avec Azure AD / Entra ID.</li>
+              <li>Audits avec PingCastle, ORCA, ScubaGear et Windows Defender Scoreboard.</li>
+              <li>Déploiement et configuration de Wazuh pour la détection des menaces et la gestion des alertes.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job" data-reveal>
+          <div class="job-logo" aria-hidden="true">SO</div>
+          <div>
+            <p class="job-meta">Juin 2022 – septembre 2023</p>
+            <h3>Support utilisateur et installation de systèmes de sécurité</h3>
+            <p class="job-org">SOCOBA, Guinée</p>
+            <ul>
+              <li>Support technique aux utilisateurs pour résoudre les problèmes matériels et logiciels.</li>
+              <li>Installation et configuration de caméras de surveillance pour la sécurité des locaux.</li>
+              <li>Mise en place de systèmes d'alerte contre les intrusions et autres incidents de sécurité.</li>
+              <li>Formation des utilisateurs aux nouveaux équipements et systèmes de sécurité.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Compétences ===== -->
+  <section class="bg-light pad" id="competences" aria-labelledby="competences-titre">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Compétences</p>
+      <h2 class="headline" id="competences-titre" data-lines><span class="l"><span>Attaquer pour</span></span><span class="l"><span>mieux défendre.</span></span></h2>
+      <div class="bento" data-stagger>
+        <article class="card ink s7" data-reveal>
+          <p class="card-tag">Spécialité</p>
+          <h3>Pentest Active Directory</h3>
+          <p class="card-text">Formation Practical Ethical Hacking (TCM Security).</p>
+          <p class="chip-label">Techniques</p>
+          <ul class="chips"><li class="chip">Kerberoasting</li><li class="chip">AS-REP Roasting</li><li class="chip">Relais NTLM</li><li class="chip">Pass-the-Hash</li><li class="chip">DCSync</li></ul>
+          <p class="chip-label">Outils</p>
+          <ul class="chips"><li class="chip">Impacket</li><li class="chip">BloodHound</li><li class="chip">Mimikatz</li><li class="chip">Rubeus</li></ul>
+        </article>
+        <article class="card s5" data-reveal>
+          <p class="card-tag">Offensif</p>
+          <h3>Pentest web, API et réseau</h3>
+          <ul class="chips"><li class="chip">Injections SQL</li><li class="chip">Injections NoSQL</li><li class="chip">XSS</li><li class="chip">Phishing</li><li class="chip">Injection de prompt (LLM)</li></ul>
+        </article>
+        <article class="card s5" data-reveal>
+          <p class="card-tag">Défensif</p>
+          <h3>Audit et durcissement</h3>
+          <ul class="chips"><li class="chip">PingCastle</li><li class="chip">ORCA</li><li class="chip">ScubaGear</li><li class="chip">Windows Defender Scoreboard</li><li class="chip">Tiering</li><li class="chip">LAPS</li><li class="chip">GPO</li><li class="chip">Recommandations ANSSI</li><li class="chip">Durcissement Linux</li><li class="chip">Durcissement Windows 11</li></ul>
+        </article>
+        <article class="card s7" data-reveal>
+          <p class="card-tag">Cloud</p>
+          <h3>Microsoft Azure</h3>
+          <p class="card-text">Les 4 piliers, plus Cost Management.</p>
+          <div class="pillars">
+            <div class="pillar"><b>Compute</b><span>VM, App Service, Functions</span></div>
+            <div class="pillar"><b>Réseau</b><span>VNet, sous-réseaux, NSG, Private Endpoint</span></div>
+            <div class="pillar"><b>Stockage</b><span>Comptes de stockage, Blob</span></div>
+            <div class="pillar"><b>Bases de données</b><span>Azure SQL, Cosmos DB</span></div>
+          </div>
+        </article>
+        <article class="card s6" data-reveal>
+          <p class="card-tag">Identité</p>
+          <h3>Active Directory et Microsoft Entra ID</h3>
+          <p class="card-text">AD on-premise (comptes, groupes, GPO, délégations), environnement hybride et synchronisation.</p>
+          <ul class="chips"><li class="chip">RBAC</li><li class="chip">Accès conditionnel</li><li class="chip">MFA</li><li class="chip">IAM</li></ul>
+        </article>
+        <article class="card s3 half-md" data-reveal>
+          <p class="card-tag">Réseau</p>
+          <h3>Networking</h3>
+          <p class="card-text">TCP/IP, VLAN, VPN, DNS, DHCP, pfSense, Suricata.</p>
+        </article>
+        <article class="card s3 half-md" data-reveal>
+          <p class="card-tag">Détection</p>
+          <h3>SOC</h3>
+          <p class="card-text">Wazuh : détection et gestion des alertes.</p>
+        </article>
+        <article class="card s12" data-reveal>
+          <p class="card-tag">Outils</p>
+          <h3>Au quotidien</h3>
+          <ul class="chips"><li class="chip">Linux</li><li class="chip">Terraform <span class="badge">notions</span></li><li class="chip">Docker <span class="badge">notions</span></li><li class="chip">Git <span class="badge">notions</span></li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projets ===== -->
+  <section class="bg-white pad" id="projets" aria-labelledby="projets-titre">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Projets</p>
+      <h2 class="headline" id="projets-titre" data-lines><span class="l"><span>Apprendre</span></span><span class="l"><span>en construisant.</span></span></h2>
+      <div class="bento" data-stagger>
+        <article class="card ink s7" data-reveal>
+          <p class="big-num">01</p>
+          <p class="card-tag">Durcissement</p>
+          <h3>Windows 11 Local Hardening</h3>
+          <p class="card-text">Durcissement local d'un poste Windows 11.</p>
+          <p class="card-foot"><a class="link-arrow" href="https://github.com/mahdifahs/Windows-11-local-hardening" target="_blank" rel="noopener">Voir sur GitHub<span class="sr-only"> (Windows 11 Local Hardening, nouvel onglet)</span></a></p>
+        </article>
+        <article class="card s5" data-reveal>
+          <p class="big-num">02</p>
+          <p class="card-tag">IA · Projet de fin de Master 1</p>
+          <h3>Pentest d'une application LLM</h3>
+          <p class="card-text">Injection de prompt, contournement des protections et fuite de données.</p>
+        </article>
+        <article class="card s5" data-reveal>
+          <p class="big-num">03</p>
+          <p class="card-tag">Phishing · Python</p>
+          <h3>mphish</h3>
+          <p class="card-text">Émulateur de liens de phishing open source pour simuler des attaques, à usage pédagogique et autorisé, exposé via Ngrok ou Localrun.</p>
+          <p class="card-foot"><a class="link-arrow" href="https://github.com/mahdifahs/mphish" target="_blank" rel="noopener">Voir sur GitHub<span class="sr-only"> (mphish, nouvel onglet)</span></a></p>
+        </article>
+        <article class="card s7" data-reveal>
+          <p class="big-num">04</p>
+          <p class="card-tag">Pentest web</p>
+          <h3>Pentest d'une application web</h3>
+          <p class="card-text">Test d'intrusion sur une application hébergée en local, pour identifier les principales failles et évaluer la robustesse de l'authentification et de l'autorisation.</p>
+          <p class="card-text">Injections SQL et NoSQL pour exfiltrer des données ou contourner l'authentification, failles XSS côté client.</p>
+        </article>
+        <article class="card s6" data-reveal>
+          <p class="big-num">05</p>
+          <p class="card-tag">Infrastructure</p>
+          <h3>Home Network</h3>
+          <p class="card-text">Serveur ESXi hébergeant DNS, DHCP et pfSense (routage, pare-feu, VLAN, VPN), Suricata pour la détection d'intrusion, Wazuh pour les alertes et Nextcloud pour le stockage et la synchronisation des fichiers.</p>
+        </article>
+        <article class="card s6" data-reveal>
+          <p class="big-num">06</p>
+          <p class="card-tag">Matériel</p>
+          <h3>Arduino Rubber Ducky</h3>
+          <p class="card-text">Carte Arduino configurée en Rubber Ducky : prise de contrôle à distance, reverse shell et contournement de protections, pour des démonstrations de hacking éthique.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Formation ===== -->
+  <section class="bg-light pad" id="formation" aria-labelledby="formation-titre">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Formation</p>
+      <h2 class="headline" id="formation-titre" data-lines><span class="l"><span>Toujours en</span></span><span class="l"><span>apprentissage.</span></span></h2>
+      <div class="edu" data-stagger>
+        <div class="edu-row" data-reveal>
+          <p class="edu-year">2026 – 2027</p>
+          <div>
+            <h3>Master 2 Cyberdéfense et Sécurité de l'Information (CDSI) <span class="now">En cours</span></h3>
+            <p>INSA Hauts-de-France, Valenciennes.</p>
+          </div>
+        </div>
+        <div class="edu-row" data-reveal>
+          <p class="edu-year">2025 – 2026</p>
+          <div>
+            <h3>Master 1 Cyberdéfense et Sécurité de l'Information (CDSI)</h3>
+            <p>INSA Hauts-de-France. Projet : pentest d'une application LLM.</p>
+          </div>
+        </div>
+        <div class="edu-row" data-reveal>
+          <p class="edu-year">2022 – 2025</p>
+          <div>
+            <h3>BUT Réseaux et Télécommunications, parcours Cybersécurité</h3>
+            <p>IUT de Clermont-Ferrand, Université Clermont Auvergne. Sécurisation des infrastructures réseau, tests d'intrusion et gestion de systèmes sécurisés. Formation TCM Security (Web Pentest, API) en parallèle.</p>
+          </div>
+        </div>
+        <div class="edu-row" data-reveal>
+          <p class="edu-year">2021 – 2022</p>
+          <div>
+            <h3>Baccalauréat scientifique et certification Practical Ethical Hacking</h3>
+            <p>Spécialités Mathématiques et Biologie. Certification Practical Ethical Hacking (TCM Security).</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Style CSS -->
-<style>
-  /* Style général de la section des compétences */
-  .competence-section {
-    padding: 60px 0;
-    background-color: #fff;
-  }
-
-  .competence-title {
-    font-size: 40px;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .competence-card {
-    border: 2px solid #f7b731;
-    border-radius: 15px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease-in-out;
-    background-color: #f9f9f9;
-    padding: 30px;
-    margin-bottom: 20px;
-    height: 100%;
-  }
-
-  .competence-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    animation: bounce 0.5s ease forwards;
-  }
-
-  /* Animation pour le rebond */
-  @keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-  }
-
-  .competence-icon {
-    margin-bottom: 20px;
-    animation: rotateIcon 2s infinite;
-  }
-
-  @keyframes rotateIcon {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
-  }
-
-  .logo-inside-card {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 4px solid #f7b731;
-    transition: transform 0.3s ease;
-  }
-
-  .logo-inside-card:hover {
-    transform: scale(1.1);
-  }
-
-  h3 {
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .competence-text {
-    font-size: 18px;
-    color: #666;
-    text-align: center;
-    padding: 20px;
-    margin-top: 10px;
-  }
-
-  .highlight-yellow {
-    color: #f7b731;
-    font-weight: bold;
-  }
-</style>
-
-<!-- Scripts JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/animate.css/animate.min.js"></script>
-
-
-</style>
-
-
-<section class="qualite-section">
-  <div class="container">
-    <h2 class="qualite-title animate__animated animate__fadeInUp">Mes Qualités</h2>
-
-    <div class="row">
-      <!-- Qualité 1 (Esprit d'équipe) -->
-      <div class="col-md-4 mb-4">
-        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
-          <h3><span class="highlight-yellow">Esprit d'équipe</span></h3>
-          <p class="qualite-text">
-            Je suis un collaborateur qui valorise le <span class="highlight-yellow">travail en équipe</span>. 
-            Ma capacité à communiquer efficacement et à collaborer avec les autres permet de créer un environnement de travail harmonieux et productif.
-          </p>
-        </div>
+  <!-- ===== Qualités ===== -->
+  <section class="bg-white pad" id="qualites" aria-labelledby="qualites-titre">
+    <div class="wrap center">
+      <p class="eyebrow" data-reveal>Qualités</p>
+      <h2 class="headline" id="qualites-titre" data-lines><span class="l"><span>Au-delà</span></span><span class="l"><span>de la technique.</span></span></h2>
+      <div class="traits" data-stagger style="text-align:left">
+        <article class="trait" data-reveal><h3>Esprit d'équipe</h3><p>Je communique et je collabore pour créer un environnement de travail harmonieux et productif.</p></article>
+        <article class="trait" data-reveal><h3>Autonome</h3><p>Je travaille de manière indépendante, je prends des initiatives et je résous les problèmes sans supervision constante.</p></article>
+        <article class="trait" data-reveal><h3>Responsable</h3><p>Je respecte mes engagements et je mène les projets à bien avec des résultats de qualité.</p></article>
+        <article class="trait" data-reveal><h3>Curieux</h3><p>Toujours en quête d'apprentissage, je suis l'évolution des menaces et des techniques.</p></article>
       </div>
-
-      <!-- Qualité 2 (Autonome) -->
-      <div class="col-md-4 mb-4">
-        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
-          <h3><span class="highlight-yellow">Autonome</span></h3>
-          <p class="qualite-text">
-            Je suis capable de <span class="highlight-yellow">travailler de manière indépendante</span> et de prendre des initiatives. 
-            Mon autonomie me permet de gérer efficacement mes tâches et de résoudre les problèmes sans supervision constante.
-          </p>
-        </div>
-      </div>
-
-      <!-- Qualité 3 (Responsable) -->
-      <div class="col-md-4 mb-4">
-        <div class="qualite-card p-4 text-center animate__animated animate__fadeInUp">
-          <h3><span class="highlight-yellow">Responsable</span></h3>
-          <p class="qualite-text">
-            Je prends mes <span class="highlight-yellow">responsabilités</span> au sérieux et je m'engage à respecter mes engagements. 
-            Ma fiabilité et mon sens des responsabilités me permettent de mener à bien les projets et de garantir des résultats de qualité.
-          </p>
-        </div>
+      <div class="interests" data-reveal>
+        <span class="interests-label">Centres d'intérêt</span>
+        <span class="chip">Culture</span>
+        <span class="chip">Boxe anglaise</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Style CSS -->
-<style>
-  /* Style général de la section des qualités */
-  .qualite-section {
-    padding: 60px 0;
-    background-color: #fff;
-  }
-
-  .qualite-title {
-    font-size: 40px;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .qualite-card {
-    border: 2px solid #f7b731;
-    border-radius: 15px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease-in-out;
-    background-color: #f9f9f9;
-    padding: 30px;
-    margin-bottom: 20px;
-    height: 100%;
-  }
-
-  .qualite-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    animation: bounce 0.5s ease forwards;
-  }
-
-  /* Animation pour le rebond */
-  @keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-  }
-
-  h3 {
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .qualite-text {
-    font-size: 18px;
-    color: #666;
-    text-align: center;
-    padding: 20px;
-    margin-top: 10px;
-  }
-
-  .highlight-yellow {
-    color: #f7b731;
-    font-weight: bold;
-  }
-</style>
-
-<!-- Scripts JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/animate.css/animate.min.js"></script>
-
-
-<!-- Section Mes Projets -->
-<section id="projets" class="section-projets text-center">
-  <h2 class="section-title text-uppercase">Mes Projets</h2>
-  <div class="container">
-    <div class="row justify-content-center">
-      <!-- Première colonne -->
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="projet-card">
-          <h3><span class="highlight-yellow">mphish</span> - Emulateur de Liens Phishing</h3>
-          <p class="projet-text">
-            Un émulateur de liens phishing créé pour aider les pentesteurs à simuler des attaques de phishing. Ce projet open-source est disponible sur GitHub, offrant une plateforme simple et efficace pour tester la sécurité des réseaux et applications web.
-          </p>
-          <a href="https://github.com/mahdifahs/mphish" target="_blank" class="btn btn-primary">Voir le projet sur GitHub</a>
-        </div>
-      </div>
-
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="projet-card">
-          <h3><span class="highlight-yellow">Arduino Rubber Ducky</span> - Configuration et Sécurité</h3>
-          <p class="projet-text">
-            Configuration d'une carte Arduino pour fonctionner comme une Rubber Ducky, permettant la prise de contrôle de PC à distance, l'exécution de reverse shell, et le bypass de sécurité. 
-            Ce projet explore les capacités de l'Arduino pour des tests de sécurité avancés et des démonstrations de hacking éthique.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="projet-card">
-          <h3><span class="highlight-yellow">Pentest sur Application Web</span> - Sécurité et Tests d'Intrusion</h3>
-          <p class="projet-text">
-            J’ai réalisé un test d’intrusion sur une application web hébergée en local . L’objectif était d’identifier les principales failles de sécurité et d’évaluer la robustesse des mécanismes d’authentification et d’autorisation.  
-            L’audit s’est concentré sur plusieurs vulnérabilités critiques, notamment les injections SQL et NoSQL, permettant d’exfiltrer des données ou de contourner l’authentification, les failles XSS visant à exécuter du code malveillant côté client.
-          </p>
-        </div>
-      </div>
-
-      <!-- Deuxième colonne -->
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="projet-card">
-          <h3><span class="highlight-yellow">Home Network</span> - Infrastructure Réseau Domestique</h3>
-          <p class="projet-text">
-            Mise en place d'une infrastructure réseau domestique avec un serveur ESXi hébergeant plusieurs machines virtuelles, dont un serveur DNS, DHCP, et PFsense pour le routage, le firewalling, les VLANs, et les VPN. 
-            Intégration de Suricata IDS pour la détection et la prévention des intrusions, ainsi que de Wazuh pour la gestion des alertes de sécurité. 
-            Déploiement de Nextcloud pour le stockage et la synchronisation des fichiers, offrant une solution complète de gestion de réseau domestique.
-          </p>
-        </div>
+  <!-- ===== Contact ===== -->
+  <section class="dark contact" id="contact" aria-labelledby="contact-titre">
+    <div class="wrap center">
+      <p class="eyebrow" data-reveal>Contact</p>
+      <h2 class="headline" id="contact-titre" data-lines><span class="l"><span>Travaillons</span></span><span class="l"><span>ensemble.</span></span></h2>
+      <p class="lede" data-reveal>Disponible pour un stage de fin d'études de 6&nbsp;mois à partir du 1<sup>er</sup>&nbsp;mars&nbsp;2027.</p>
+      <a class="contact-mail" href="mailto:mahdi.fahs@uphf.fr" data-reveal>mahdi.fahs@uphf.fr</a>
+      <div class="socials" data-reveal>
+        <a class="link-arrow" href="https://fr.linkedin.com/in/mahdi-fahs-21a98116a" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a>
+        <a class="link-arrow" href="https://github.com/mahdifahs/" target="_blank" rel="noopener">GitHub<span class="sr-only"> (nouvel onglet)</span></a>
       </div>
     </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Mahdi FAHS. Tous droits réservés.</p>
+    <p><a href="#accueil">Retour en haut</a></p>
   </div>
-</section>
+</footer>
 
-<!-- CSS -->
-<style>
-  .section-projets {
-    padding: 60px 0;
-    background-color: #f9f9f9;
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ----- Menu mobile ----- */
+  var btn = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  function closeMenu() {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); btn.focus(); }
+  });
+
+  /* ----- Décalage (stagger) des cartes ----- */
+  document.querySelectorAll('[data-stagger]').forEach(function (group) {
+    group.querySelectorAll('[data-reveal]').forEach(function (el, i) {
+      el.style.setProperty('--d', (i % 4) * 90 + 'ms');
+    });
+  });
+
+  /* ----- Mots de la déclaration ----- */
+  var statement = document.querySelector('[data-words]');
+  var words = [];
+  if (statement) {
+    var text = statement.textContent.trim();
+    statement.setAttribute('aria-label', text);
+    statement.textContent = '';
+    text.split(/\s+/).forEach(function (w, i, arr) {
+      var s = document.createElement('span');
+      s.className = 'w';
+      s.setAttribute('aria-hidden', 'true');
+      s.textContent = w;
+      statement.appendChild(s);
+      if (i < arr.length - 1) statement.appendChild(document.createTextNode(' '));
+      words.push(s);
+    });
   }
 
-  .section-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 30px;
+  if (!root.classList.contains('motion')) return;
+
+  /* ----- Apparition au défilement ----- */
+  function countUp(el) {
+    var to = +el.dataset.to, from = +(el.dataset.from || 0), dur = 1400, t0 = null;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(from + (to - from) * e);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = from;
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('.count').forEach(countUp);
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+  document.querySelectorAll('[data-reveal], [data-lines]').forEach(function (el) { io.observe(el); });
+
+  /* ----- Effets liés au défilement ----- */
+  var bar = document.querySelector('.progress');
+  var hero = document.querySelector('.hero');
+  var heroText = document.querySelector('.hero-text');
+  var heroMedia = document.querySelector('.hero-media');
+  var heroShade = document.querySelector('.hero-shade');
+  var story = document.querySelector('.story');
+  var stages = story ? story.querySelectorAll('.stage') : [];
+  var dots = story ? story.querySelectorAll('.rail i') : [];
+  var current = -1;
+
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+    var max = document.documentElement.scrollHeight - vh;
+    bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+
+    // Hero : la photo grossit et s'assombrit, le texte s'efface vers le haut
+    var r = hero.getBoundingClientRect();
+    var p = clamp(-r.top / Math.max(r.height - vh, 1));
+    heroMedia.style.transform = 'scale(' + (1 + 0.28 * p) + ')';
+    heroShade.style.opacity = (0.6 * p).toFixed(3);
+    heroText.style.opacity = clamp(1 - p * 1.7).toFixed(3);
+    heroText.style.transform = 'translateY(' + (-70 * p) + 'px)';
+
+    // Déclaration : les mots s'illuminent au fil du défilement
+    if (words.length) {
+      var sr = statement.getBoundingClientRect();
+      var sp = clamp((vh * 0.82 - sr.top) / (sr.height + vh * 0.35));
+      var lit = Math.round(sp * words.length);
+      for (var i = 0; i < words.length; i++) words[i].classList.toggle('on', i < lit);
+    }
+
+    // Parcours sticky : l'étape affichée suit le défilement
+    if (stages.length) {
+      var st = story.getBoundingClientRect();
+      var pp = clamp(-st.top / Math.max(st.height - vh, 1));
+      var idx = Math.min(stages.length - 1, Math.floor(pp * stages.length));
+      if (idx !== current) {
+        current = idx;
+        stages.forEach(function (s, k) {
+          s.classList.toggle('active', k === idx);
+          s.classList.toggle('past', k < idx);
+        });
+        dots.forEach(function (d, k) { d.classList.toggle('on', k === idx); });
+      }
+    }
   }
 
-  .projet-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    padding: 25px;
-    height: 450px; /* Hauteur fixe pour toutes les cartes */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrer horizontalement */
-    justify-content: space-between; /* Assurer que les éléments sont espacés uniformément */
-    text-align: center; /* Centrer le texte */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  var ticking = false;
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 
-  .projet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* ----- Si l'utilisateur active « réduire les animations » en cours de route ----- */
+  function disableMotion() {
+    if (!reduceQuery.matches) return;
+    root.classList.remove('motion');
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+    io.disconnect();
+    [heroMedia, heroShade, heroText].forEach(function (el) { el.removeAttribute('style'); });
+    stages.forEach(function (s) { s.classList.remove('active', 'past'); });
+    document.querySelectorAll('.count').forEach(function (el) { el.textContent = el.dataset.to; });
   }
-
-  .highlight-yellow {
-    color: #f7b731;
-    font-weight: bold;
-  }
-
-  .projet-text {
-    font-size: 1.1rem;
-    color: #555;
-    flex-grow: 1; /* Permet au texte d'occuper l'espace sans pousser le bouton vers le bas */
-    display: flex;
-    align-items: center; /* Centrer le texte verticalement */
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 8px 18px;
-    font-size: 1rem;
-    background-color: #f7b731;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .btn:hover {
-    background-color: #ffb81c;
-  }
-</style>
-
-
-<!-- Section Contact -->
-<section id="contact" class="section-contact text-center">
-  <h2 class="section-title text-uppercase">Contactez-moi</h2>
-  <p class="contact-text">
-    Pour toute question ou demande, n'hésitez pas à me contacter par email.
-  </p>
-  <a href="mailto:mahdi.fahs@etu.uca.fr" class="btn btn-contact">Envoyer un Email</a>
-</section>
-
-<!-- CSS -->
-<style>
-  .section-contact {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .contact-text {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
-  }
-  
-  .btn-contact {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #f7b731;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-contact:hover {
-    background-color: #ffb81c;
-  }
-</style>
-
-  <!-- Pied de page -->
-  <footer>
-    <a href="https://fr.linkedin.com/in/mahdi-fahs-21a98116a" target="_blank">
-      <img src="linkedin.svg" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/mahdifahs/" target="_blank">
-      <img src="github.svg" alt="GitHub">
-    </a>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
+  if (reduceQuery.addEventListener) reduceQuery.addEventListener('change', disableMotion);
+})();
+</script>
 </body>
 </html>
