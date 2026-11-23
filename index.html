@@ -167,6 +167,16 @@
   .btn:hover { background: #0077ed; text-decoration: none; }
   .link-arrow { font-size: 17px; font-weight: 500; }
   .link-arrow::after { content: " \203A"; font-size: 1.15em; }
+  .hero-tag {
+    display: inline-flex; align-items: center; margin-top: 18px; padding: 7px 16px;
+    border-radius: 999px; background: #1d1d1f; border: 1px solid #333336;
+    color: #f5f5f7 !important; font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+    transition: background .2s, border-color .2s;
+  }
+  .hero-tag b { color: var(--accent-dark); font-weight: 600; margin-right: 1px; }
+  .hero-tag::after { content: " \203A"; color: var(--grey-dark); font-size: 1.15em; margin-left: 4px; }
+  .hero-tag:hover { background: #2a2a2d; border-color: #48484a; text-decoration: none; }
+  #greencampus { scroll-margin-top: 24px; }
 
   /* ---------- Chiffres clés ---------- */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 72px; }
@@ -394,6 +404,7 @@
       <div class="hero-text">
         <p class="hero-kicker">Cloud &amp; Security · Azure, Entra ID, Active Directory, Terraform</p>
         <h1 data-lines><span class="l"><span>Mahdi FAHS.</span></span></h1>
+        <a class="hero-tag" href="#greencampus"><b>#</b>GreenCampus HdF</a>
         <p class="hero-sub">Étudiant en Master 2 Cyberdéfense et Sécurité de l'Information à l'INSA Hauts-de-France. <strong>Je recherche un stage de fin d'études de 6&nbsp;mois à partir du 1<sup>er</sup>&nbsp;mars&nbsp;2027.</strong></p>
         <div class="cta">
           <a class="btn" href="#contact">Me contacter</a>
@@ -635,6 +646,20 @@
           <p class="card-tag">Matériel</p>
           <h3>Arduino Rubber Ducky</h3>
           <p class="card-text">Carte Arduino configurée en Rubber Ducky : prise de contrôle à distance, reverse shell et contournement de protections, pour des démonstrations de hacking éthique.</p>
+        </article>
+        <article class="card ink s12" id="greencampus" data-reveal>
+          <p class="big-num">06</p>
+          <p class="card-tag">Cloud · AWS · Terraform · Projet en équipe</p>
+          <h3>GreenCampus HdF : infrastructure AWS</h3>
+          <p class="card-text">Application web qui aide les étudiants à mesurer et réduire leur empreinte carbone. J'ai conçu, sécurisé et déployé toute son infrastructure en production sur AWS : réseau, sécurité, base de données, serveur et déploiement.</p>
+          <div class="pillars">
+            <div class="pillar"><b>Réseau</b><span>VPC, 1 sous-réseau public et 2 privés, Internet Gateway, tables de routage</span></div>
+            <div class="pillar"><b>Sécurité</b><span>Security Groups chaînés, aucun port SSH (Session Manager), secrets dans SSM, HTTPS Let's Encrypt</span></div>
+            <div class="pillar"><b>Calcul et données</b><span>EC2 et Elastic IP, RDS PostgreSQL 17 privée et chiffrée</span></div>
+            <div class="pillar"><b>Automatisation</b><span>Terraform en 4 étapes, script de déploiement, logs CloudWatch</span></div>
+          </div>
+          <ul class="chips"><li class="chip">AWS</li><li class="chip">Terraform</li><li class="chip">EC2</li><li class="chip">RDS</li><li class="chip">IAM</li><li class="chip">SSM</li><li class="chip">S3</li><li class="chip">Docker</li><li class="chip">Nginx</li><li class="chip">RGPD</li></ul>
+          <p class="card-foot"><a class="link-arrow" href="https://github.com/mahdifahs/GreenCampusHdF" target="_blank" rel="noopener">Voir sur GitHub<span class="sr-only"> (GreenCampus HdF, nouvel onglet)</span></a> &nbsp; <a class="link-arrow" href="https://13-63-106-251.sslip.io" target="_blank" rel="noopener">Voir le site<span class="sr-only"> (GreenCampus HdF, nouvel onglet)</span></a></p>
         </article>
       </div>
     </div>
